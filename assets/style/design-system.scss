@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 300ms;
+  .hr {
+    background-color: rgba(25, 25, 25, 0.08);
+    margin: 14px;
+    height: 1px;
+  }
+}
+.container {
+  width: 90%;
+  max-width: 1320px;
+  margin-inline: auto;
+}
+body {
+  font: 100% $font-stack;
+  color: $black;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.5rem;
+  &:hover {
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.358);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 76px;
+  font-weight: 800;
+}
+h3 {
+  font-size: 46px;
+  font-weight: 800;
+}
+p {
+  font-size: 20px;
+  font-weight: 400;
+  span {
+    font-weight: 900;
+  }
+}

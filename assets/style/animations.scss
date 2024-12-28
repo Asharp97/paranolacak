@@ -1,0 +1,11 @@
+.cover-remove {
+  animation: cover-remover 6s $drift;
+}
+@keyframes cover-remover {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
