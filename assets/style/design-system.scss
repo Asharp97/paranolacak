@@ -15,10 +15,12 @@
   margin-inline: auto;
 }
 body {
-  font: 100% $font-stack;
+  font-family: $font-stack;
   color: $black;
-  background-color: $white;
   overflow-x: hidden;
+}
+.no-scroll {
+  overflow: hidden;
 }
 
 button {
@@ -30,6 +32,9 @@ button {
   cursor: pointer;
   white-space: nowrap;
   width: 100%;
+}
+.showMob {
+  display: none !important;
 }
 
 input[type="checkbox"],
@@ -44,15 +49,40 @@ input[type="radio"] {
 a {
   text-decoration: none;
   color: inherit;
+  &:hover {
+    p,
+    button,
+    .icon {
+      transform: translateX(0.5rem);
+      color: $primary;
+      opacity: 0.7;
+    }
+  }
 }
 
 h1 {
   font-size: 76px;
   font-weight: 800;
 }
+h2 {
+  font-size: 54.857px;
+  font-weight: 700;
+}
 h3 {
   font-size: 46px;
   font-weight: 800;
+}
+h4 {
+  font-size: 34.049px;
+  font-weight: 600;
+}
+h5 {
+  font-size: 22.7px;
+  font-weight: 900;
+}
+h6 {
+  font-weight: 700;
+  font-style: 18px;
 }
 p {
   font-size: 20px;

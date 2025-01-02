@@ -1,0 +1,34 @@
+.slide-left-enter-active {
+  animation: fade-in 0.5s $brake;
+  .menu-content {
+    animation: slide-left 0.5s $brake;
+  }
+}
+
+.slide-left-leave-active {
+  animation: fade-in 0.5s $reversebrake reverse;
+
+  .menu-content {
+    animation: slide-left 0.5s $reversebrake reverse;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    backdrop-filter: blur(0);
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    backdrop-filter: blur(1rem);
+    background-color: rgba(0, 0, 0, 0.418);
+  }
+}

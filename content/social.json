@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Telegram",
+    "icon": "mdi-telegram",
+    "link": "https://t.me/"
+  },
+  {
+    "name": "X (formerly Twitter)",
+    "icon": "mdi-twitter",
+    "link": "https://x.com/"
+  },
+  {
+    "name": "LinkedIn",
+    "icon": "mdi-linkedin",
+    "link": "https://linkedin.com/"
+  },
+  {
+    "name": "Instagram",
+    "icon": "mdi-instagram",
+    "link": "https://instagram.com/"
+  }
+]

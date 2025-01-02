@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Şirket",
+    "links": [
+      { "name": "Hakkımızda", "url": "/hakkimizda" },
+      { "name": "Gereksinimler", "url": "/gereksinimler" },
+      { "name": "Nasıl Hesap Açılır?", "url": "/nasil-hesap-acilir" }
+    ]
+  },
+  {
+    "title": "Whitepaper",
+    "links": [
+      { "name": "Gizlilik Sözleşmesi", "url": "/gizlilik-sozlesmesi" },
+      { "name": "Kurallar ve Şartlar", "url": "/kurallar-ve-sartlar" },
+      { "name": "Çerez Politikası", "url": "/cerez-politikasi" },
+      { "name": "Uyum Politikası", "url": "/uyum-politikasi" },
+      { "name": "Komisyonlar", "url": "/komisyonlar" }
+    ]
+  },
+  {
+    "title": "Hesaplar",
+    "links": [
+      { "name": "Bireysel", "url": "/bireysel" },
+      { "name": "Kurumsal", "url": "/kurumsal" }
+    ]
+  }
+]

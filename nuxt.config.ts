@@ -7,20 +7,28 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/eslint",
     "pinia-plugin-persistedstate",
-    "@nuxt/ui",
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          "Red Hat Display": [100, 300, 400, 500, 700, 900], // Specify desired weights
-        },
-      },
-    ],
+    // "@nuxt/ui",
+    "@nuxt/test-utils",
+    "@nuxt/fonts",
+    "@nuxt/scripts",
+    "@nuxt/image",
   ],
+  image: {
+    provider: "imagekit",
+    imagekit: {
+      baseURL: "https://ik.imagekit.io/sharp/paranolacak/",
+      modifiers: {
+        format: "webp",
+        fit: "cover",
+      },
+    },
+  },
   css: [
     "./assets/style/main.scss",
     "./assets/style/animations.scss",
     "./assets/style/design-system.scss",
+    "./assets/style/mob.scss",
+    "./assets/style/transitions.scss",
   ],
   vite: {
     css: {

@@ -1,0 +1,37 @@
+[
+  {
+    "category": "harcamalar",
+    "amount": "789,92 ₺",
+    "icon": ""
+  },
+  {
+    "category": "Restaurant",
+    "amount": "89,75 ₺",
+    "icon": "mdi-silverware-fork-knife"
+  },
+  {
+    "category": "Pet shop",
+    "amount": "122,90 ₺",
+    "icon": "mdi-paw"
+  },
+  {
+    "category": "Elektrik Faturası",
+    "amount": "99,99 ₺",
+    "icon": "mdi-lightning-bolt"
+  },
+  {
+    "category": "Akaryakıt",
+    "amount": "200,00 ₺",
+    "icon": "mdi-fuel"
+  },
+  {
+    "category": "Market",
+    "amount": "59,99 ₺",
+    "icon": "mdi-cart"
+  },
+  {
+    "category": "Kafe",
+    "amount": "129,50 ₺",
+    "icon": "mdi-coffee"
+  }
+]

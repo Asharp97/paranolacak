@@ -1,0 +1,26 @@
+@media only screen and (max-width: 480px) {
+  .hideMob {
+    display: none !important;
+  }
+  .showMob {
+    display: block !important;
+  }
+
+  footer {
+    .info {
+      justify-content: center !important;
+      .contact-info {
+        text-align: center !important;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .main {
+    .security {
+      .imgs {
+        justify-content: center !important;
+        gap: 40px;
+      }
+    }
+  }
+}

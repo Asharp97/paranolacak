@@ -1,0 +1,20 @@
+[
+  {
+    "title": "10%",
+    "description": "Amazon.com alışverişlerinizde %10 geri ödeme alın. İade koşulları, iade programı sayfasında ayrıntılı olarak açıklanmıştır.",
+    "logo": "amazon.png",
+    "link": "https://www.amazon.com"
+  },
+  {
+    "title": "15%",
+    "description": "Netflix alışverişlerinizde %10 geri ödeme alın. İade koşulları, iade programı sayfasında ayrıntılı olarak açıklanmıştır.",
+    "logo": "netflix.png",
+    "link": "https://www.netflix.com"
+  },
+  {
+    "title": "5%",
+    "description": "Shell'den yapacağınız akaryakıt alışverişlerinde %10 geri ödeme alın. İade koşulları, iade programı sayfasında ayrıntılı olarak açıklanmıştır.",
+    "logo": "shell.png",
+    "link": "https://www.shell.com"
+  }
+]
