@@ -7,7 +7,7 @@
         <slot />
       </div>
       <div class="img" :style="`max-width: ${maxWidth}`">
-        <nuxt-img class="img" :src="`${img}`" />
+        <nuxt-img class="img float" :src="`${img}`" />
       </div>
     </section>
   </div>

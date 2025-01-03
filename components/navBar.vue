@@ -3,9 +3,9 @@
     <div class="nav-wrapper">
       <nav class="container hideMob">
         <div class="menu">
-          <NuxtLink to="/"
-            ><img src="../assets/imgs/katman_1.png" alt=""
-          /></NuxtLink>
+          <NuxtLink to="/">
+            <nuxt-img class="img desktop-logo" src="logo.png" />
+          </NuxtLink>
           <NuxtLink v-for="(x, n) in menu" :key="n" :to="`/${x.link}`"
             ><div class="headers">{{ x.name }}</div>
           </NuxtLink>
@@ -15,10 +15,10 @@
           <Btn variant="secondry">Hesap Oluştur</Btn>
         </div>
       </nav>
-      <nav>
-        <div class="mobile-nav showMob">
+      <nav class="showMob">
+        <div class="mobile-nav">
           <div class="nav container">
-            <img src="../assets/imgs/katman_1.png" alt="" />
+            <nuxt-img class="img" src="logo.png" />
             <div class="icon-wrapper" @click="showNav = true">
               <Icon
                 name="icon-park-outline:hamburger-button"
@@ -98,8 +98,9 @@ const menu = [
   height: $navHeight;
   background-color: $black;
   color: white;
+  display: flex;
+  align-items: center;
   nav {
-    padding-block: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,6 +108,9 @@ const menu = [
       display: flex;
       align-items: center;
       gap: 55px;
+      .desktop-logo {
+        width: 150px;
+      }
       .router-link-active {
         .headers {
           background-color: $primary;

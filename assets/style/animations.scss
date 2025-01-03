@@ -9,3 +9,124 @@
     opacity: 1;
   }
 }
+
+.float {
+  animation: floater 7s infinite;
+}
+@keyframes floater {
+  0% {
+    transform: translateY(40px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(40px);
+  }
+}
+
+.from-below-blur {
+  animation: from-below-blur cubic-bezier(0, 0, 0.06, 1) both;
+  animation-timeline: view(block);
+  animation-range: cover 30% cover 40%;
+}
+@keyframes from-below-blur {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+    filter: blur(50px);
+  }
+  to {
+    transform: translateY(0);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.from-below {
+  animation: from-below cubic-bezier(0, 0, 0.06, 1) both;
+  animation-timeline: view(block);
+  animation-range: cover 30% cover 40%;
+}
+@keyframes from-below {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.elastic-enter-mb {
+  animation: elastic-enter-mb ease-in-out both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 50%;
+}
+@keyframes elastic-enter-mb {
+  from {
+    margin-bottom: 40px;
+  }
+
+  to {
+    margin-bottom: 0;
+  }
+}
+
+.elastic-enter-gap {
+  display: flex;
+  flex-direction: column;
+
+  animation: elastic-enter-gap ease-in-out both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 60%;
+}
+@keyframes elastic-enter-gap {
+  from {
+    gap: 30px;
+  }
+
+  to {
+    gap: 0;
+  }
+}
+
+.cover-remove {
+  animation: cover-remove ease-in-out both;
+  animation-timeline: view(block);
+  animation-range: cover 5% cover 50%;
+}
+@keyframes cover-remove {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transform: translateY(100%);
+    filter: blur(5px);
+    letter-spacing: -4px;
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 110%, 0 110%);
+    transform: translateY(0);
+    filter: blur(0);
+    letter-spacing: 0px;
+  }
+}
+
+.zoom-out {
+  animation: zoom-out ease-in-out both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 40%;
+}
+@keyframes zoom-out {
+  from {
+    scale: 3;
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    scale: 1;
+  }
+}

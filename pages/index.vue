@@ -23,7 +23,13 @@
           harcayabilirsiniz.
         </p>
         <div class="cards">
-          <div v-for="(x, n) in cashback" :key="n" class="card">
+          <div
+            v-for="(x, n) in cashback"
+            :key="n"
+            :style="`animation-range:cover ${30 + n * 5}% cover ${
+              40 + n * 5
+            }%;`"
+            class="card from-below-blur">
             <div class="text">
               <h5>{{ x.title }} Cashback</h5>
               <p>{{ x.description }}</p>
@@ -47,7 +53,7 @@
       </div>
     </Hero>
 
-    <div class="transfer container">
+    <section class="transfer container">
       <nuxt-img class="img" src="glass.png" />
       <h3>Saniyeler içinde <span>transfer</span> veya ödeme yapın.</h3>
       <p>
@@ -76,9 +82,17 @@
           class="img"
           :src="`${img}.png`"
           :class="img" />
+
+        <div class="comments">
+          <div v-for="(x, n) in comments" :key="n" class="comment">
+            <Icon :name="x.icon" class="icon" />
+            <p>{{ x.text }}</p>
+            <img src="../assets/imgs/Vector 5.svg" alt="" />
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="security container">
+    </section>
+    <section class="security container">
       <h2>Önceliğimiz sizin güvenliğiniz.</h2>
       <p>
         Güvenliğiniz bizim için önemlidir. Destek ekibimiz 7/24 hizmetinizdedir.
@@ -98,7 +112,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -107,6 +121,20 @@ import Hero from "../components/hero.vue";
 import cashback from "@/content/cashback.json";
 import bill from "@/content/bill.json";
 const imgs = ["restaurant", "fam", "party", "rent"];
+const comments = [
+  {
+    icon: "twemoji:beaming-face-with-smiling-eyes",
+    text: "lezzetli bir akşam yemeği",
+  },
+  {
+    icon: "twemoji:money-with-wings",
+    text: "ev kirası ödendi",
+  },
+  {
+    icon: "twemoji:service-dog",
+    text: "köpeğimi çok seviyorum",
+  },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -208,11 +236,14 @@ const imgs = ["restaurant", "fam", "party", "rent"];
         z-index: 10;
         position: relative;
 
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
         .row {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 20px;
           .category {
             display: flex;
             align-items: center;
@@ -238,9 +269,54 @@ const imgs = ["restaurant", "fam", "party", "rent"];
           }
         }
       }
+      .comment {
+        border: 2px solid $primary;
+        border-radius: 1rem;
+        position: absolute;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        img {
+          position: absolute;
+          z-index: 1;
+        }
+        &:first-child {
+          top: -12rem;
+          right: 0rem;
+          img {
+            bottom: -93px;
+            right: 133px;
+            transform: rotate(2deg);
+          }
+        }
+        &:nth-child(2) {
+          top: -7rem;
+          right: -8rem;
+          img {
+            bottom: -110px;
+            right: 40px;
+            transform: rotate(-30deg);
+          }
+        }
+        &:last-child {
+          background-color: $primary;
+          bottom: -15rem;
+          right: -4rem;
+          img {
+            top: -100px;
+            right: 0;
+          }
+        }
+
+        .icon {
+          transform: translate(-50%, -50%);
+          top: -5px;
+          font-size: 1.5rem;
+          position: absolute;
+        }
+      }
       .img {
         position: absolute;
-        z-index: 0;
+        z-index: 2;
         max-width: 366px;
         width: 100%;
       }

@@ -30,6 +30,7 @@
               <div class="footer-title">SOSYAL MEDYA</div>
               <div class="social-media">
                 <NuxtLink
+                  target="_blank"
                   v-for="(x, n) in social"
                   :key="n"
                   :to="x.link"
@@ -40,12 +41,16 @@
             </div>
             <div>
               <div class="footer-title">Ödeme Altyapısı</div>
-              <Icon name="lineicons:mastercard" class="mastercard icon" />
+              <NuxtLink
+                to="https://www.mastercard.com.tr/tr-tr.html"
+                target="_blank">
+                <Icon name="lineicons:mastercard" class="mastercard icon" />
+              </NuxtLink>
             </div>
           </div>
         </div>
         <div class="legal">
-          <nuxt-img class="img" src="white_logo.png" />
+          <nuxt-img class="img" src="logo.png" />
           <p>
             ParanOlacak, Türkiye Cumhuriyeti Merkez Bankası tarafından
             elektronik para (e-para) ihraç etme ve ödeme hizmetleri sağlama
@@ -79,6 +84,8 @@ footer {
   padding: 2rem;
   color: $white;
   background-color: $black;
+  z-index: 10;
+  position: relative;
   .footer-content {
     .info {
       display: flex;
