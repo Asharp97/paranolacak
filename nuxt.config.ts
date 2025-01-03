@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/eslint",
     "pinia-plugin-persistedstate",
-    // "@nuxt/ui",
+    "nuxt3-lenis",
     "@nuxt/test-utils",
     "@nuxt/fonts",
     "@nuxt/scripts",

@@ -16,6 +16,7 @@
     "@nuxt/scripts": "0.9.5",
     "@nuxt/test-utils": "3.15.1",
     "nuxt": "^3.15.0",
+    "nuxt3-lenis": "^1.5.9",
     "pinia": "^2.3.0",
     "vue": "latest",
     "vue-router": "latest"

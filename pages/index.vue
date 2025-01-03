@@ -16,8 +16,10 @@
     </Hero>
     <Hero img="hero2.png" max-width="17rem" :inv="true" class="cashback">
       <div class="cashback-content">
-        <h2>Harcadıkça kazan, <span>kazandıkça harca!</span></h2>
-        <p>
+        <h2 class="cover-remove">
+          Harcadıkça kazan, <span>kazandıkça harca!</span>
+        </h2>
+        <p class="cover-remove">
           Anlaşmalı üye işyerlerinden yaptığınız alışverişlerde %5 geri iade
           ediyoruz. Kartınıza yüklenen paraları dilediğiniz yerde
           harcayabilirsiniz.
@@ -40,23 +42,28 @@
       </div>
     </Hero>
     <Hero img="download.png" max-width="419px" :inv="true" class="download">
-      <h1>PO Mobil’i <span>indirin</span>.</h1>
-      <p>
+      <h1 class="cover-remove">PO Mobil’i <span>indirin</span>.</h1>
+      <p class="cover-remove">
         Paranolacak mobil uygulaması ile paranızı dilediğiniz gibi yönetin.
         Transfer yapın, ödeme alın ve yatırımlarınızı kontrol edin. <br />
         <br />
         PO Mobil ile tüm kontrol sizde!
       </p>
       <div class="stores">
-        <nuxt-img class="img" src="google-play.png" />
-        <nuxt-img class="img" src="app-store.png" />
+        <nuxt-img class="img from-below-blur" src="google-play.png" />
+        <nuxt-img
+          class="img from-below-blur"
+          src="app-store.png"
+          style="animation-range: cover 35% cover 45%" />
       </div>
     </Hero>
 
     <section class="transfer container">
-      <nuxt-img class="img" src="glass.png" />
-      <h3>Saniyeler içinde <span>transfer</span> veya ödeme yapın.</h3>
-      <p>
+      <nuxt-img class="img from-below-blur" src="glass.png" />
+      <h3 class="cover-remove">
+        Saniyeler içinde <span>transfer</span> veya ödeme yapın.
+      </h3>
+      <p class="cover-remove">
         Saniyeler içerisinde hesabınızdan transfer yapın veya ödeme alın.
         Üstelik<strong> FAST</strong> ile 100.000 ₺ limitle!
       </p>
@@ -65,7 +72,7 @@
           <div
             v-for="(x, n) in bill"
             :key="n"
-            class="row"
+            class="row elastic-enter-mb"
             :class="{ bold: n == 0 }">
             <div class="category">
               <div v-if="x.icon" class="icon-wrapper">
@@ -79,7 +86,8 @@
         <nuxt-img
           v-for="(img, n) in imgs"
           :key="n"
-          class="img"
+          class="img from-below"
+          :style="`animation-range:cover ${30 + n * 5}% cover ${40 + n * 5}%;`"
           :src="`${img}.png`"
           :class="img" />
 
@@ -93,19 +101,26 @@
       </div>
     </section>
     <section class="security container">
-      <h2>Önceliğimiz sizin güvenliğiniz.</h2>
-      <p>
+      <h2 class="cover-remove">Önceliğimiz sizin güvenliğiniz.</h2>
+      <p class="cover-remove">
         Güvenliğiniz bizim için önemlidir. Destek ekibimiz 7/24 hizmetinizdedir.
         Lütfen her türlü sorunuz ve probleminiz için bize danışın.
       </p>
       <div class="imgs">
         <!-- <nuxt-img v-for="n in 3" :key="n" class="img" :src="`secure${n}.png`" /> -->
-        <div class="img-wrapper">
-          <p>Kişisel bilgileriniz güvenli veri sunucuları ile güvendedir.</p>
+        <div class="img-wrapper from-below-blur">
+          <p class="cover-remove">
+            Kişisel bilgileriniz güvenli veri sunucuları ile güvendedir.
+          </p>
           <nuxt-img class="img" src="silverdb.png" />
         </div>
-        <nuxt-img class="img secure2img" src="secure2.png" />
-        <div class="img-wrapper">
+        <nuxt-img
+          class="img secure2img from-below-blur"
+          src="secure2.png"
+          style="animation-range: cover 20% cover 30%" />
+        <div
+          class="img-wrapper from-below-blur"
+          style="animation-range: cover 40% cover 50%">
           <nuxt-img class="img" src="fingerprint.png" />
           <p>
             Biyometrik oturum açma ve iki faktörlü koruma ile yüksek güvenlik.
@@ -140,7 +155,6 @@ const comments = [
 <style lang="scss" scoped>
 .main {
   background: radial-gradient(circle at 100% 50dvh, $primary -10%, $white 34%);
-  overflow-x: hidden;
 
   .landing {
     padding-top: $navHeight;

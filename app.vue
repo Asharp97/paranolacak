@@ -1,7 +1,11 @@
 <template>
   <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <Lenis root>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </Lenis>
   </div>
 </template>
+
+<script setup></script>
