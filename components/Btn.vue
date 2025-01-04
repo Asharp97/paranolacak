@@ -3,33 +3,29 @@
     :class="[
       { primary: variant == 'primary' },
       { secondry: variant == 'secondry' },
+      { fill: variant == 'fill' },
       { secondryAlt: variant == 'secondryAlt' },
       { white: textColor == 'white' },
-    ]"
-    class="btn">
-    <button>
-      <slot />
-    </button>
+    ]">
+    <NuxtLink :to="`/${destination}`" class="btn">
+      <button>
+        <slot />
+      </button>
+    </NuxtLink>
   </div>
 </template>
 
 <script setup>
-defineProps(["variant", "textColor"]);
+defineProps(["variant", "textColor", "destination"]);
 </script>
 
 <style lang="scss" scoped>
 .btn {
   font-size: 16px;
-  width: fit-content;
+  display: block;
   button {
     color: black;
-    // padding-inline: 24px;
-    padding-block: 0.5rem;
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
   }
 }
 .white {
@@ -37,7 +33,12 @@ defineProps(["variant", "textColor"]);
     color: $white;
   }
 }
-
+.fill {
+  button {
+    background-color: $primary;
+    border: 2px solid $primary;
+  }
+}
 .primary {
   button {
     background-color: transparent;
@@ -57,6 +58,11 @@ defineProps(["variant", "textColor"]);
     background-color: rgba(95, 95, 95, 0.2);
     border: 2px solid transparent;
     color: $black;
+  }
+}
+.fullwidth {
+  button {
+    width: 100%;
   }
 }
 </style>

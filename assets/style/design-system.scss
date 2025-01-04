@@ -8,6 +8,10 @@
     margin: 14px;
     height: 1px;
   }
+  .vhr {
+    background-color: rgba(25, 25, 25, 0.08);
+    width: 1px;
+  }
 }
 .container {
   width: min(1320px, 90%);
@@ -22,26 +26,37 @@ body {
   overflow: hidden;
 }
 
-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  white-space: nowrap;
-  width: 100%;
-}
 .showMob {
   display: none !important;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  width: 1.5rem;
-  &:hover {
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.358);
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+// input[type="checkbox"],
+// input[type="radio"] {
+//   width: 1.5rem;
+//   &:hover {
+//     border-radius: 50%;
+//     background-color: rgba(0, 0, 0, 0.358);
+//   }
+// }
+input {
+  all: unset;
+  border-bottom: 1px solid $primary;
+  width: 100%;
+  padding-block: 0.5rem;
+  &::placeholder {
+    color: #b1b1b1;
+    font-size: 13.241px;
+    font-weight: 600;
   }
 }
 

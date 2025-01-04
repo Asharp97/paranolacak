@@ -10,7 +10,7 @@
           paranolacak kartın ile yükledikçe harca, harcadıkça kazan. Hemen
           başvur kartını sana ulaştıralım.
         </p>
-        <btn variant="primary">Başvur</btn>
+        <btn variant="primary" destination="signUP">Başvur</btn>
       </div>
     </div>
   </div>

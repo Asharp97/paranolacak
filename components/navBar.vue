@@ -11,8 +11,10 @@
           </NuxtLink>
         </div>
         <div class="auth">
-          <Btn variant="primary" text-color="white">Giriş Yap</Btn>
-          <Btn variant="secondry">Hesap Oluştur</Btn>
+          <Btn variant="primary" text-color="white" destination="logIn"
+            >Giriş Yap</Btn
+          >
+          <Btn variant="secondry" destination="signUp">Hesap Oluştur</Btn>
         </div>
       </nav>
       <nav class="showMob">
@@ -30,7 +32,8 @@
               <div class="menu-content">
                 <div class="back">
                   <NuxtLink to="/">
-                    <nuxt-img class="img" src="miniLogo.png" />
+                    <!-- <nuxt-img class="img" src="miniLogo.png" /> -->
+                    <img src="../public/favicon.ico" alt="" class="img" />
                   </NuxtLink>
                   <div class="icon-wrapper">
                     <Icon
@@ -45,8 +48,8 @@
                 </NuxtLink>
                 <div class="hr" />
                 <div class="auth">
-                  <Btn variant="primary">Giriş Yap</Btn>
-                  <Btn variant="secondryAlt">Hesap Oluştur</Btn>
+                  <Btn variant="primary" destiation="LogIn">Giriş Yap</Btn>
+                  <Btn variant="secondryAlt" destiation="signUp">Hesap Oluştur</Btn>
                 </div>
                 <div class="footer">
                   <div class="logo">

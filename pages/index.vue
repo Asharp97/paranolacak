@@ -9,7 +9,7 @@
         <span>paran</span> olacak<span> kart</span> ile yaptığın alışverişlerden
         iade kazan veya saniyeler içerisinde hesabından transfer yap.
       </p>
-      <Btn variant="primary">
+      <Btn variant="primary" destination="signUp">
         Hesap Oluştur
         <Icon name="material-symbols:arrow-right-alt-rounded" class="icon" />
       </Btn>
@@ -109,7 +109,7 @@
       <div class="imgs">
         <!-- <nuxt-img v-for="n in 3" :key="n" class="img" :src="`secure${n}.png`" /> -->
         <div class="img-wrapper from-below-blur">
-          <p class="cover-remove">
+          <p class="cover-remove" style="animation-range: cover 5% cover 50%">
             Kişisel bilgileriniz güvenli veri sunucuları ile güvendedir.
           </p>
           <nuxt-img class="img" src="silverdb.png" />

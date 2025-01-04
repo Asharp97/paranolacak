@@ -22,6 +22,41 @@
         gap: 40px;
       }
     }
+    .transfer {
+      .bill-bg {
+        .fam {
+          display: none;
+        }
+        .restaurant {
+          top: -120px;
+          left: -90px;
+        }
+        .rent {
+          bottom: -131px;
+          left: 85px !important;
+          right: unset;
+          top: unset !important;
+        }
+        .party {
+          display: none;
+        }
+        .comment {
+          &:nth-child(2) {
+            top: unset !important;
+            right: -3rem;
+            bottom: -264px;
+            img {
+              top: -110px;
+              right: 40px;
+              transform: rotate(-76deg);
+            }
+          }
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
   }
   .nav-wrapper {
     nav {
