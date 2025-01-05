@@ -49,7 +49,9 @@
                 <div class="hr" />
                 <div class="auth">
                   <Btn variant="primary" destiation="LogIn">Giriş Yap</Btn>
-                  <Btn variant="secondryAlt" destiation="signUp">Hesap Oluştur</Btn>
+                  <Btn variant="secondryAlt" destiation="signUp"
+                    >Hesap Oluştur</Btn
+                  >
                 </div>
                 <div class="footer">
                   <div class="logo">

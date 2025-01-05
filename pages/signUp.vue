@@ -1,18 +1,18 @@
 <template>
   <div>
     <Auth>
-      <ul class="steps">
-        <li
-          v-for="n in 4"
-          :key="n"
-          class="step"
-          :class="{ active: n <= activeStep }"
-          @click="activeStep = n">
-          <h6 v-if="n != 4">{{ n }}</h6>
-          <Icon v-else name="material-symbols:check-rounded" />
-        </li>
-      </ul>
       <TransitionGroup name="slide" tag="form" @submit.prevent>
+        <ul class="steps">
+          <li
+            v-for="n in 4"
+            :key="n"
+            class="step"
+            :class="{ active: n <= activeStep }"
+            @click="activeStep = n">
+            <h6 v-if="n != 4">{{ n }}</h6>
+            <Icon v-else name="material-symbols:check-rounded" />
+          </li>
+        </ul>
         <div v-if="activeStep == 1">
           <h6 class="title">Hesap Oluştur</h6>
           <div class="input-wrapper">
@@ -28,15 +28,7 @@
             Cep telefonunuza gelen 6 haneli doğrulama kodunu aşağıdaki alana
             girin.
           </p>
-          <div class="input-wrapper verification-wrapper">
-            <input
-              v-for="(n, x) in 6"
-              :key="n"
-              v-model="otp[x]"
-              type="password"
-              maxLength="1"
-              :autofocus="n == 0" />
-          </div>
+          <otp :digit-count="4" />
         </div>
         <div v-if="activeStep == 3">
           <h6 class="title">Bilgilerinizi Doldurun</h6>
@@ -75,6 +67,11 @@
             </label>
           </div>
         </div>
+        <div v-if="activeStep == 4">
+          <h6 class="title">Hesabınız açıldı! Şimdi giriş yapabilirsiniz.</h6>
+          <Login-Form />
+        </div>
+
         <Btn
           v-if="activeStep <= 3"
           text="Devam Et"
@@ -84,16 +81,13 @@
           <p class="footer-text">Bir<span> paran</span>olacak hesabım var.</p>
           <Btn text="Giriş Yap" variant="primary" text-color="white" />
         </div>
-        <div v-if="activeStep == 4">
-          <h6 class="title">Hesabınız açıldı! Şimdi giriş yapabilirsiniz.</h6>
-        </div>
       </TransitionGroup>
     </Auth>
   </div>
 </template>
 
 <script setup>
-const activeStep = ref(3);
+const activeStep = ref(1);
 const terms = ref([
   {
     name: "Aydınlatma Metnini",
@@ -111,7 +105,6 @@ const terms = ref([
     value: false,
   },
 ]);
-const otp = ref([]);
 </script>
 
 <style lang="scss" scoped>
@@ -149,18 +142,6 @@ ul {
 }
 button {
   all: unset;
-}
-.verification-wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  input {
-    display: flex;
-    justify-content: center;
-    font-size: 41.616px;
-    font-weight: 600;
-    text-align: center;
-  }
 }
 .subtitle {
   color: #b1b1b1;
