@@ -7,8 +7,9 @@
       { secondryAlt: variant == 'secondryAlt' },
       { white: textColor == 'white' },
     ]">
-    <NuxtLink :to="`/${destination}`" class="btn">
+    <NuxtLink :to="`${destination ? '/' + destination : ''}`" class="btn">
       <button>
+        {{ text }}
         <slot />
       </button>
     </NuxtLink>
@@ -16,7 +17,7 @@
 </template>
 
 <script setup>
-defineProps(["variant", "textColor", "destination"]);
+defineProps(["variant", "textColor", "destination",'text']);
 </script>
 
 <style lang="scss" scoped>

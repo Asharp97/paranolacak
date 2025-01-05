@@ -12,6 +12,11 @@
     background-color: rgba(25, 25, 25, 0.08);
     width: 1px;
   }
+  .errormessage {
+    color: $red;
+    font-weight: 700;
+    margin-block: 1rem;
+  }
 }
 .container {
   width: min(1320px, 90%);
@@ -40,24 +45,28 @@ button {
   white-space: nowrap;
 }
 
-// input[type="checkbox"],
-// input[type="radio"] {
-//   width: 1.5rem;
-//   &:hover {
-//     border-radius: 50%;
-//     background-color: rgba(0, 0, 0, 0.358);
-//   }
-// }
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid $primary;
+  &::before {
+    // content: "\f058";
+    color: $primary;
+  }
+  &:checked {
+    box-shadow: rgba(121, 255, 188, 0.25) 0px 3px 6px -2px inset,
+      rgba(255, 255, 255, 0.3) 0px 1px 3px -1px inset;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
 input {
   all: unset;
-  border-bottom: 1px solid $primary;
-  width: 100%;
-  padding-block: 0.5rem;
-  &::placeholder {
-    color: #b1b1b1;
-    font-size: 13.241px;
-    font-weight: 600;
-  }
 }
 
 a {

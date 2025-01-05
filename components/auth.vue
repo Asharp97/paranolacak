@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="login-wrapper">
+      <nuxt-img class="img mob-app hideMob" src="mob-app.png" />
       <div class="login container">
         <div class="content">
           <div class="app hideMob">
@@ -25,7 +26,7 @@
           </div>
           <div class="vhr hideMob" />
           <div class="form-wrapper">
-            <div class="forms">
+            <div class="auth-forms">
               <slot />
             </div>
           </div>
@@ -40,6 +41,14 @@
 <style lang="scss" scoped>
 .login-wrapper {
   background: radial-gradient(circle at 100% 25dvh, $primary -200%, $black 74%);
+  position: relative;
+  .mob-app {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    max-width: 18rem;
+  }
   color: white;
   .login {
     height: calc(100dvh - $navHeight);
@@ -99,15 +108,12 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
-        .forms {
+        .auth-forms {
           max-width: 420px;
           width: 100%;
         }
       }
     }
   }
-}
-:slotted(.input-wrapper) {
-  background-color: red;
 }
 </style>

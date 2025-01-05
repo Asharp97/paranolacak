@@ -1,0 +1,43 @@
+.auth-forms {
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .input-wrapper {
+    margin-bottom: 1.1rem;
+
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    input[type="text"] {
+      border-bottom: 1px solid $primary;
+      width: 100%;
+      padding-block: 0.5rem;
+      &::placeholder {
+        color: #b1b1b1;
+        font-size: 13.241px;
+        font-weight: 600;
+      }
+    }
+  }
+  .error {
+    input {
+      border-bottom: 2px solid $red;
+    }
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 1.1rem;
+    button {
+      width: 100%;
+    }
+  }
+  .fill {
+    margin-top: 2rem;
+  }
+  .footer-text {
+    text-align: center;
+    margin-top: 6.7rem;
+    margin-bottom: 1.4rem;
+  }
+}

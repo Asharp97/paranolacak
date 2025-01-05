@@ -1,39 +1,86 @@
 <template>
   <div>
     <Auth>
-      <h6>İnternet Şubesi Giriş</h6>
-      <div class="input-wrapper">
-        <input type="text" placeholder="TCKN veya GSM No" />
-      </div>
-      <div class="input-wrapper">
-        <input type="password" placeholder="Şifreniz" />
-      </div>
-      <div class="btns-wrapper">
-        <Btn variant="fill">Giriş Yap</Btn>
-        <Btn variant="secondry">Şifremi Unuttum</Btn>
-      </div>
-      <p>
-        Bir <span>paran</span>olacak hesabınız yok mu?<br />Üzülmeyin, hesap
-        açmak tamamen ücretsizdir.
-      </p>
-      <Btn variant="primary" text-color="white" destination="signUp"
-        >Ücretsiz Hesap Aç</Btn
-      >
+      <TransitionGroup name="list" tag="form">
+        <h6 class="title">İnternet Şubesi Giriş</h6>
+        <div class="input-wrapper" :class="{ error: gsmError }">
+          <input
+            v-model="TCKNGSM"
+            type="number"
+            placeholder="TCKN veya GSM No"
+            @blur="gsmCheck" />
+        </div>
+        <div v-if="gsmError" class="errormessage">
+          {{ gsmError }}
+        </div>
+
+        <div class="input-wrapper" :class="{ error: passError }">
+          <input
+            v-model="password"
+            placeholder="Şifreniz"
+            :type="showPassword ? 'text' : 'password'"
+            @blur="passCheck" />
+
+          <Icon
+            :name="showPassword ? 'gridicons:visible' : 'gridicons:not-visible'"
+            class="icon"
+            @click="showPassword = !showPassword" />
+        </div>
+
+        <div v-if="passError" class="errormessage">
+          {{ passError }}
+        </div>
+
+        <div class="btns-wrapper">
+          <Btn variant="fill">Giriş Yap</Btn>
+          <Btn variant="secondry">Şifremi Unuttum</Btn>
+        </div>
+        <p class="footer-text">
+          Bir <span>paran</span>olacak hesabınız yok mu?<br />Üzülmeyin, hesap
+          açmak tamamen ücretsizdir.
+        </p>
+        <Btn variant="primary" text-color="white" destination="signUp"
+          >Ücretsiz Hesap Aç</Btn
+        >
+      </TransitionGroup>
     </Auth>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { validateGSM, validatePassword } from "@/utils/validations";
+
+const TCKNGSM = ref();
+const password = ref();
+
+const showPassword = ref(false);
+const gsmError = ref("");
+const passError = ref("");
+
+const gsmCheck = () => {
+  const { isValid, error, type } = validateGSM(TCKNGSM.value);
+  gsmError.value = error;
+  return isValid;
+};
+
+const passCheck = () => {
+  const { isValid, error } = validatePassword(password.value);
+  passError.value = error;
+  return isValid;
+};
+</script>
 
 <style lang="scss" scoped>
-::v-deep(.btn) {
-  width: 100%;
-  button {
-    width: 100%;
+.input-wrapper {
+  position: relative;
+  .icon {
+    border: none;
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $dimgrey;
   }
-}
-
-p {
-  text-align: center;
 }
 </style>
