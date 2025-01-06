@@ -15,6 +15,26 @@
       }
     }
   }
+  .login-wrapper {
+    .login {
+      .content {
+        .form-wrapper {
+          .auth-forms {
+            margin: 0 !important;
+            .steps{
+              min-width: 320px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .hero-component {
+    margin-bottom: 4rem;
+    .section {
+      justify-content: center !important;
+    }
+  }
   .main {
     .security {
       .imgs {

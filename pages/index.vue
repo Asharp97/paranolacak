@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <Hero img="hero.png" max-width="30rem" class="landing">
+    <Hero class="landing" :video="true">
       <h1><span> Para al </span>, para gönder.</h1>
       <h3>Harca, harcadıkça kazan.</h3>
       <p>
@@ -31,7 +31,8 @@
             :style="`animation-range:cover ${30 + n * 5}% cover ${
               40 + n * 5
             }%;`"
-            class="card from-below-blur">
+            class="card from-below-blur"
+          >
             <div class="text">
               <h5>{{ x.title }} Cashback</h5>
               <p>{{ x.description }}</p>
@@ -54,7 +55,8 @@
         <nuxt-img
           class="img from-below-blur"
           src="app-store.png"
-          style="animation-range: cover 35% cover 45%" />
+          style="animation-range: cover 35% cover 45%"
+        />
       </div>
     </Hero>
 
@@ -73,7 +75,8 @@
             v-for="(x, n) in bill"
             :key="n"
             class="row elastic-enter-mb"
-            :class="{ bold: n == 0 }">
+            :class="{ bold: n == 0 }"
+          >
             <div class="category">
               <div v-if="x.icon" class="icon-wrapper">
                 <Icon :name="x.icon" class="icon" />
@@ -89,7 +92,8 @@
           class="img from-below"
           :style="`animation-range:cover ${30 + n * 5}% cover ${40 + n * 5}%;`"
           :src="`${img}.png`"
-          :class="img" />
+          :class="img"
+        />
 
         <div class="comments">
           <div v-for="(x, n) in comments" :key="n" class="comment">
@@ -117,10 +121,12 @@
         <nuxt-img
           class="img secure2img from-below-blur"
           src="secure2.png"
-          style="animation-range: cover 20% cover 30%" />
+          style="animation-range: cover 20% cover 30%"
+        />
         <div
           class="img-wrapper from-below-blur"
-          style="animation-range: cover 40% cover 50%">
+          style="animation-range: cover 40% cover 50%"
+        >
           <nuxt-img class="img" src="fingerprint.png" />
           <p>
             Biyometrik oturum açma ve iki faktörlü koruma ile yüksek güvenlik.

@@ -113,12 +113,14 @@
   }
   .campaigns {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    max-width: 1590px;
     flex-wrap: wrap;
     width: 100%;
+    margin-inline: auto;
     margin-top: 20rem;
     .img {
-      max-width: 23rem;
+      max-width: 22rem;
       width: 100%;
     }
   }

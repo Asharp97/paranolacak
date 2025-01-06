@@ -49,7 +49,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 20%;
+    width: 15%;
     max-width: 18rem;
   }
   .login {
@@ -60,14 +60,14 @@
     .content {
       display: flex;
       justify-content: center;
-      height: 70dvh;
+      // height: 70dvh;
       width: 100%;
       .app-wrapper,
       .form-wrapper {
         flex: 1;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow-x: hidden;
       }
       .app-wrapper {
         align-items: flex-end;
@@ -94,13 +94,13 @@
             }
             .vector {
               position: absolute;
-              bottom: -71px;
+              bottom: -0px;
               left: 218px;
             }
             .floaty {
               text-align: center;
               position: absolute;
-              bottom: -150px;
+              bottom: -90px;
               left: 135px;
             }
           }
@@ -111,6 +111,7 @@
         background-color: white;
       }
       .form-wrapper {
+        min-width: 410px;
         justify-content: center;
         .auth-forms {
           margin-left: 4rem;
@@ -120,10 +121,5 @@
       }
     }
   }
-}
-
-.form-wrapper {
-  width: 200px;
-  overflow: hidden;
 }
 </style>
