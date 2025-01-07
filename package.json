@@ -18,6 +18,7 @@
     "nuxt": "^3.15.0",
     "nuxt3-lenis": "^1.5.9",
     "pinia": "^2.3.0",
+    "v-gsap-nuxt": "1.1.9",
     "vue": "latest",
     "vue-router": "latest"
   },

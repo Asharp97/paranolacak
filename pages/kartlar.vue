@@ -14,7 +14,8 @@
         :key="n"
         class="img from-below"
         :style="`animation-range:cover ${30 + n * 5}% cover ${40 + n * 5}%;`"
-        :src="`campaign${n - 1}.png`" />
+        :src="`campaign${n - 1}.png`"
+      />
     </section>
     <section class="advantage">
       <nuxt-img class="img zoom-out" src="thought.png" />
@@ -33,45 +34,26 @@
     <section class="temas">
       <nuxt-img class="img" src="temassiz.png" />
       <div class="text container">
-        <h2>Temassız Öde</h2>
-        <p>
+        <h2 class="cover-remove">Temassız Öde</h2>
+        <p class="gentle-slide">
           paranolacak kart’ının temassız ödeme özelliği ile 1000₺’ye kadar olan
           ödemelerinde şifre girmeden hızlı ve güvenli harcama yapabilirsin.
         </p>
       </div>
     </section>
     <section class="tutorial container">
-      <h2><span>Hemen kaydolun,</span> avantajlardan yararlanın.</h2>
+      <h2 class="cover-remove">
+        <span>Hemen kaydolun,</span> avantajlardan yararlanın.
+      </h2>
       <div class="steps">
         <nuxt-img class="img" src="download.png" />
         <div class="text">
           <img src="../assets/imgs/Vector 6.svg" class="lines" alt="" />
-          <ol>
-            <li>
+          <ol name="list">
+            <li v-for="(step, n) in steps" :key="n">
               <div>
-                <h5>Kayit</h5>
-                <p>
-                  Kayıt aşaması hızlı, kolay ve tamamen ücretsizdir. Saniyeler
-                  içinde kaydolun.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h5>KYC Doğrulama</h5>
-                <p>
-                  Mobil uygulamamız üzerinden kimliğinizi doğrulayın. Bu işlem 5
-                  dakika içinde tamamlanır.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <h5>IBAN & Fiziksel Kart</h5>
-                <p>
-                  IBAN'ınızı oluşturun ve fiziksel paranolacak kartınızı sipariş
-                  edin!
-                </p>
+                <h5 class="gentle-slide">{{ step.title }}</h5>
+                <p class="gentle-slide">{{ step.paragraph }}</p>
               </div>
             </li>
           </ol>
@@ -82,7 +64,25 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const steps = ref([
+  {
+    title: "Kayit",
+    paragraph:
+      "Kayıt aşaması hızlı, kolay ve tamamen ücretsizdir. Saniyeler içinde kaydolun.",
+  },
+  {
+    title: "KYC Doğrulama",
+    paragraph:
+      "Mobil uygulamamız üzerinden kimliğinizi doğrulayın. Bu işlem 5 dakika içinde tamamlanır.",
+  },
+  {
+    title: "IBAN & Fiziksel Kart",
+    paragraph:
+      "IBAN'ınızı oluşturun ve fiziksel paranolacak kartınızı sipariş edin!",
+  },
+]);
+</script>
 
 <style lang="scss" scoped>
 .cards {
@@ -118,7 +118,7 @@
     flex-wrap: wrap;
     width: 100%;
     margin-inline: auto;
-    margin-top: 20rem;
+    margin-top: 10rem;
     .img {
       max-width: 22rem;
       width: 100%;

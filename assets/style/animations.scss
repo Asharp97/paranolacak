@@ -1,15 +1,3 @@
-.cover-remove {
-  animation: cover-remover 6s $drift;
-}
-@keyframes cover-remover {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .float {
   animation: floater 7s infinite;
 }
@@ -148,5 +136,23 @@
   to {
     transform: rotate(0);
     scale: 1;
+  }
+}
+
+.gentle-slide {
+  animation: gentle-slide $drift both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 40%;
+}
+@keyframes gentle-slide {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0);
   }
 }

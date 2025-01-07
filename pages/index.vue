@@ -19,7 +19,7 @@
         <h2 class="cover-remove">
           Harcadıkça kazan, <span>kazandıkça harca!</span>
         </h2>
-        <p class="cover-remove">
+        <p class="gentle-slide">
           Anlaşmalı üye işyerlerinden yaptığınız alışverişlerde %5 geri iade
           ediyoruz. Kartınıza yüklenen paraları dilediğiniz yerde
           harcayabilirsiniz.
@@ -44,7 +44,7 @@
     </Hero>
     <Hero img="download.png" max-width="419px" :inv="true" class="download">
       <h1 class="cover-remove">PO Mobil’i <span>indirin</span>.</h1>
-      <p class="cover-remove">
+      <p class="gentle-slide">
         Paranolacak mobil uygulaması ile paranızı dilediğiniz gibi yönetin.
         Transfer yapın, ödeme alın ve yatırımlarınızı kontrol edin. <br />
         <br />
@@ -65,7 +65,7 @@
       <h3 class="cover-remove">
         Saniyeler içinde <span>transfer</span> veya ödeme yapın.
       </h3>
-      <p class="cover-remove">
+      <p class="gentle-slide">
         Saniyeler içerisinde hesabınızdan transfer yapın veya ödeme alın.
         Üstelik<strong> FAST</strong> ile 100.000 ₺ limitle!
       </p>
@@ -106,14 +106,14 @@
     </section>
     <section class="security container">
       <h2 class="cover-remove">Önceliğimiz sizin güvenliğiniz.</h2>
-      <p class="cover-remove">
+      <p class="gentle-slide">
         Güvenliğiniz bizim için önemlidir. Destek ekibimiz 7/24 hizmetinizdedir.
         Lütfen her türlü sorunuz ve probleminiz için bize danışın.
       </p>
       <div class="imgs">
         <!-- <nuxt-img v-for="n in 3" :key="n" class="img" :src="`secure${n}.png`" /> -->
         <div class="img-wrapper from-below-blur">
-          <p class="cover-remove" style="animation-range: cover 5% cover 50%">
+          <p class="gentle-slide" style="animation-range: cover 5% cover 50%">
             Kişisel bilgileriniz güvenli veri sunucuları ile güvendedir.
           </p>
           <nuxt-img class="img" src="silverdb.png" />

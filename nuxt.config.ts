@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/scripts",
     "@nuxt/image",
+    "v-gsap-nuxt",
   ],
   image: {
     provider: "imagekit",

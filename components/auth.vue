@@ -53,14 +53,14 @@
     max-width: 18rem;
   }
   .login {
-    height: calc(100dvh - $navHeight);
+    min-height: calc(100dvh - $navHeight);
     display: flex;
     align-items: center;
     justify-content: center;
     .content {
       display: flex;
       justify-content: center;
-      height: 70dvh;
+      min-height: 70dvh;
       width: 100%;
       .app-wrapper,
       .form-wrapper {

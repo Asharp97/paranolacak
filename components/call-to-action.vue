@@ -2,15 +2,17 @@
   <div class="to-action-wrapper">
     <div class="to-action container">
       <div class="img-wrapper hideMob">
-        <nuxt-img class="img" src="card.png" />
+        <nuxt-img class="img rotato" src="card.png" />
       </div>
       <div class="text">
-        <h2>paran<span>olacak</span> kart sahibi ol</h2>
-        <p>
+        <h2 class="gentle-slide">paran<span>olacak</span> kart sahibi ol</h2>
+        <p class="gentle-slide">
           paranolacak kartın ile yükledikçe harca, harcadıkça kazan. Hemen
           başvur kartını sana ulaştıralım.
         </p>
-        <btn variant="primary" destination="signUP">Başvur</btn>
+        <btn class="gentle-slide" variant="primary" destination="signUP"
+          >Başvur</btn
+        >
       </div>
     </div>
   </div>

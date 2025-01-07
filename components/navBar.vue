@@ -28,7 +28,8 @@
             <div class="icon-wrapper" @click="showNav = true">
               <Icon
                 name="icon-park-outline:hamburger-button"
-                class="hamburger icon" />
+                class="hamburger icon"
+              />
             </div>
           </div>
           <Transition name="slide-left">
@@ -43,7 +44,8 @@
                     <Icon
                       name="material-symbols:arrow-forward-ios-rounded"
                       class="forward icon"
-                      @click="showNav = false" />
+                      @click="showNav = false"
+                    />
                   </div>
                 </div>
                 <div class="hr" />
@@ -149,6 +151,10 @@ const menu = [
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .img {
+          width: 50%;
+          min-width: 180px;
+        }
       }
       .icon-wrapper {
         font-size: 1.5rem;
