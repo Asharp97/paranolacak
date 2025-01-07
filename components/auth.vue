@@ -60,7 +60,7 @@
     .content {
       display: flex;
       justify-content: center;
-      // height: 70dvh;
+      height: 70dvh;
       width: 100%;
       .app-wrapper,
       .form-wrapper {

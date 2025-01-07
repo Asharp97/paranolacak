@@ -6,7 +6,11 @@
           <NuxtLink to="/">
             <nuxt-img class="img desktop-logo" src="logo.png" />
           </NuxtLink>
-          <NuxtLink v-for="(x, n) in menu" :key="n" :to="`/${x.link}`"
+          <NuxtLink
+            v-for="(x, n) in menu"
+            :key="n"
+            :to="`/${x.link}`"
+            class="link-wrapper"
             ><div class="headers">{{ x.name }}</div>
           </NuxtLink>
         </div>
@@ -109,12 +113,20 @@ const menu = [
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
     .menu {
       display: flex;
       align-items: center;
+      height: 100%;
       gap: 55px;
       .desktop-logo {
         width: 150px;
+      }
+      .link-wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-inline: 10px;
       }
       .router-link-active {
         .headers {

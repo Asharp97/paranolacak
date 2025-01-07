@@ -3,67 +3,43 @@
     <input
       v-for="(n, x) in 6"
       :key="n"
+      :ref="`items`"
       v-model="otp[x]"
       type="password"
       maxLength="1"
       :autofocus="n == 0"
-      @keydown="handleKeyDown($event, ind)" />
+      @input="handleKeyDown($event, x)"
+      @keydown="del($event, x)" />
+    <!-- @keyup="handleKeyDown($event, x)"  -->
   </div>
 </template>
 
 <script setup>
-const otp = ref([]);
-
-const props = defineProps({
-  default: String,
-
-  digitCount: {
-    type: Number,
-    required: true,
-  },
+const itemRefs = useTemplateRef("items");
+const log = console.log
+onMounted(() => {
+  itemRefs.value[0].focus();
 });
 
-const digits = reactive([]);
+const otp = ref([]);
 
-if (props.default && props.default.length === props.digitCount) {
-  for (let i = 0; i < props.digitCount; i++) {
-    digits[i] = props.default.charAt(i);
-  }
-} else {
-  for (let i = 0; i < props.digitCount; i++) {
-    digits[i] = null;
-  }
-}
-
-const handleKeyDown = function (event, index) {
-  if (
-    event.key !== "Tab" &&
-    event.key !== "ArrowRight" &&
-    event.key !== "ArrowLeft"
-  ) {
-    event.preventDefault();
-  }
-
-  if (event.key === "Backspace") {
-    digits[index] = null;
-
-    if (index != 0) {
-      otpCont.value.children[index - 1].focus();
-    }
-
-    return;
-  }
-
-  if (new RegExp("^([0-9])$").test(event.key)) {
-    digits[index] = event.key;
-
-    if (index != props.digitCount - 1) {
-      otpCont.value.children[index + 1].focus();
-    }
-  }
+const del = function (event, index) {
+  log(event.key)
 };
 
-const otpCont = ref(null);
+const handleKeyDown = function (event, index) {
+  // console.log(event.inputType == "insertText");
+  // console.log(event.inputType == "deleteContentBackward");
+  // console.log(event.inputType);
+  // console.log(index);
+
+  if (event.inputType == "deleteContentBackward") {
+    console.log("backsy");
+    if (index > 0) {
+      itemRefs.value[index - 1].focus();
+    }
+  } else itemRefs.value[index + 1].focus();
+};
 </script>
 
 <style lang="scss" scoped>

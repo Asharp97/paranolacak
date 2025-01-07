@@ -8,8 +8,7 @@
             :key="n"
             class="step"
             :class="{ active: n <= activeStep }"
-            @click="activeStep = n"
-          >
+            @click="activeStep = n">
             <h6 v-if="n != 4">{{ n }}</h6>
             <Icon v-else name="material-symbols:check-rounded" />
           </li>
@@ -29,7 +28,7 @@
             Cep telefonunuza gelen 6 haneli doğrulama kodunu aşağıdaki alana
             girin.
           </p>
-          <otp :digit-count="4" />
+          <otp />
         </div>
         <div v-if="activeStep == 3">
           <h6 class="title">Bilgilerinizi Doldurun</h6>
@@ -51,20 +50,17 @@
           <div
             v-for="(n, x) in terms"
             :key="x"
-            class="input-wrapper checkbox-wrapper"
-          >
+            class="input-wrapper checkbox-wrapper">
             <input
               id="term"
               v-model="terms[x].value"
               type="checkbox"
-              name="term"
-            />
+              name="term" />
             <label :for="n.name">
               <span v-if="terms[x].value" class="icon-wrapper">
                 <Icon
                   name="material-symbols:check-small-rounded"
-                  class="icon"
-                />
+                  class="icon" />
               </span>
               <NuxtLink class="link">{{ n.name }}</NuxtLink>
               <span> okudum onaylıyorum.</span>
@@ -80,8 +76,7 @@
           v-if="activeStep <= 3"
           text="Devam Et"
           variant="fill"
-          @click="activeStep++"
-        />
+          @click="activeStep++" />
         <div v-if="activeStep < 3">
           <p class="footer-text">Bir<span> paran</span>olacak hesabım var.</p>
           <Btn text="Giriş Yap" variant="primary" text-color="white" />
@@ -92,7 +87,7 @@
 </template>
 
 <script setup>
-const activeStep = ref(1);
+const activeStep = ref(2);
 const terms = ref([
   {
     name: "Aydınlatma Metnini",
