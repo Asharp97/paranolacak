@@ -74,6 +74,9 @@
         text-align: right;
         .app {
           margin-right: 4rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
           .logo {
             width: 12rem;
             margin-bottom: 1.2rem;
@@ -87,6 +90,7 @@
           }
           .img-wrapper {
             position: relative;
+            width: fit-content;
             .qr {
               background-color: white;
               border-radius: 1rem;
@@ -94,20 +98,23 @@
             }
             .vector {
               position: absolute;
-              bottom: -0px;
-              left: 218px;
+              bottom: 0px;
+              left: 0px;
+              transform: translate(-110%, 0);
             }
             .floaty {
               text-align: center;
               position: absolute;
-              bottom: -90px;
-              left: 135px;
+              bottom: 0;
+              left: 0;
+              transform: translate(-150%, 100%);
+              max-width: 300px;
+              width: 100%;
             }
           }
         }
       }
       .vhr {
-        height: 100%;
         background-color: white;
       }
       .form-wrapper {

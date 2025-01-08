@@ -2,18 +2,7 @@
   <div>
     <Auth>
       <TransitionGroup name="slide" tag="form" @submit.prevent>
-        <ul class="steps">
-          <li
-            v-for="n in 4"
-            :key="n"
-            class="step"
-            :class="{ active: n <= activeStep }"
-            @click="activeStep = n"
-          >
-            <h6 v-if="n != 4">{{ n }}</h6>
-            <Icon v-else name="material-symbols:check-rounded" />
-          </li>
-        </ul>
+        <auth-steps :step="activeStep" @activate-step="activateStep" />
         <div v-if="activeStep == 1">
           <h6 class="title">Hesap Oluştur</h6>
           <div class="input-wrapper">
@@ -93,6 +82,9 @@
 
 <script setup>
 const activeStep = ref(1);
+const activateStep = (x) => {
+  activeStep.value = x;
+};
 const input = useTemplateRef("inputfocus");
 onMounted(() => {
   input.value.focus();
@@ -123,38 +115,7 @@ form {
   min-width: 350px;
   max-width: 410px;
 }
-ul {
-  display: flex;
-  gap: 2.8rem;
-  margin-bottom: 1.1rem;
-  li {
-    cursor: pointer;
-    position: relative;
-    border: 1px solid $dimgrey;
-    width: 2.7rem;
-    height: 2.7rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:not(:first-child):before {
-      content: "";
-      display: block;
-      position: absolute;
-      margin: 3em 0;
-      border-bottom: 2px dotted $dimgrey;
-      width: 41px;
-      left: -44px;
-    }
-  }
-  .active {
-    border: 1px solid $primary;
-    color: $primary;
-    &:before {
-      border-bottom: 2px dotted $primary !important;
-    }
-  }
-}
+
 button {
   all: unset;
 }
