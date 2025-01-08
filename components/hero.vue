@@ -1,6 +1,6 @@
 <template>
-  <div class="hero-component section-bg">
-    <section class="section container" :class="{ inv: inv }">
+  <section class="hero-component section-bg">
+    <div class="section container" :class="{ inv: inv }">
       <div class="text" :class="{ white: video }">
         <h1>{{ header }}</h1>
         <p>{{ paragraph }}</p>
@@ -17,8 +17,8 @@
         playsinline
         src="https://ik.imagekit.io/sharp/paranolacak/hero.mp4"
       />
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script setup>

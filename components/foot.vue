@@ -9,7 +9,7 @@
               <div v-for="(title, y) in x.links" :key="y" class="menu">
                 <p>
                   <NuxtLink :to="title.url">
-                    <p>{{ title.name }}</p>
+                    <p class="gentle-slide">{{ title.name }}</p>
                   </NuxtLink>
                 </p>
               </div>
@@ -20,21 +20,23 @@
             <div>
               <div class="footer-title">DESTEK HATTI</div>
               <NuxtLink to="tel:0800 800 80 80">
-                <p>0800 800 80 80</p>
+                <p class="gentle-slide">0800 800 80 80</p>
               </NuxtLink>
               <NuxtLink to="mailto:destek@paranolacak.com">
-                <p>destek@paranolacak.com</p>
+                <p class="gentle-slide">destek@paranolacak.com</p>
               </NuxtLink>
             </div>
             <div>
               <div class="footer-title">SOSYAL MEDYA</div>
               <div class="social-media">
                 <NuxtLink
-                  target="_blank"
                   v-for="(x, n) in social"
                   :key="n"
+                  target="_blank"
                   :to="x.link"
-                  :title="x.name">
+                  class="gentle-slide"
+                  :title="x.name"
+                >
                   <Icon :name="x.icon" class="icon" />
                 </NuxtLink>
               </div>
@@ -43,7 +45,9 @@
               <div class="footer-title">Ödeme Altyapısı</div>
               <NuxtLink
                 to="https://www.mastercard.com.tr/tr-tr.html"
-                target="_blank">
+                target="_blank"
+                class="gentle-slide"
+              >
                 <Icon name="lineicons:mastercard" class="mastercard icon" />
               </NuxtLink>
             </div>
@@ -51,7 +55,7 @@
         </div>
         <div class="legal">
           <nuxt-img class="img" src="logo.png" />
-          <p>
+          <p class="gentle-slide">
             ParanOlacak, Türkiye Cumhuriyeti Merkez Bankası tarafından
             elektronik para (e-para) ihraç etme ve ödeme hizmetleri sağlama
             yetkisine sahiptir. (Şirket Numarası: 12472532) tarafından verilir

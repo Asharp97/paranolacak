@@ -46,7 +46,7 @@
         <span>Hemen kaydolun,</span> avantajlardan yararlanın.
       </h2>
       <div class="steps">
-        <nuxt-img class="img" src="download.png" />
+        <nuxt-img class="img rotato" src="download.png" />
         <div class="text">
           <img src="../assets/imgs/Vector 6.svg" class="lines" alt="" />
           <ol name="list">
@@ -88,6 +88,7 @@ const steps = ref([
 .cards {
   background: radial-gradient(circle at 100% 200dvh, $primary -10%, $white 34%);
   text-align: center;
+  overflow: clip;
 
   .hero {
     h2 {

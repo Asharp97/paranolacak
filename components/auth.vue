@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <div class="login-wrapper">
-      <nuxt-img class="img mob-app hideMob" src="mob-app.png" />
-      <div class="login container">
-        <div class="content">
-          <div class="app-wrapper">
-            <div class="app hideMob">
+  <div class="login-wrapper">
+    <nuxt-img class="img mob-app hideTab" src="mob-app.png" />
+    <div class="login container">
+      <div class="content">
+        <div class="hideTab app-wrapper">
+          <Transition appear name="special-left">
+            <div class="app hideTab">
               <nuxt-img class="img logo" src="logo-small.png" />
               <h3>Mobil uygulamamızı</h3>
               <h4>indirdiniz mi?</h4>
@@ -25,25 +25,45 @@
                 </p>
               </div>
             </div>
+          </Transition>
+        </div>
+        <Transition appear name="scaleVertical">
+          <div class="vhr hideTab" />
+        </Transition>
+        <div class="form-wrapper">
+          <div class="icon-wrapper">
+            <Icon
+              name="material-symbols-light:cancel-rounded"
+              class="icon"
+              @click="modal.show = null"
+            />
           </div>
-          <div class="vhr hideMob" />
-          <div class="form-wrapper">
+          <Transition appear name="special-right">
             <div class="auth-forms">
               <slot />
             </div>
-          </div>
+          </Transition>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onKeyStroke } from "@vueuse/core";
+const modal = useModal();
+
+onKeyStroke("Escape", () => {
+  modal.show = null;
+});
+</script>
 
 <style lang="scss" scoped>
 .login-wrapper {
   background: radial-gradient(circle at 100% 25dvh, $primary -200%, $black 74%);
-  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
   color: white;
   .mob-app {
     position: absolute;
@@ -53,14 +73,14 @@
     max-width: 18rem;
   }
   .login {
-    min-height: calc(100dvh - $navHeight);
+    // min-height: calc(100dvh);
     display: flex;
     align-items: center;
     justify-content: center;
     .content {
       display: flex;
       justify-content: center;
-      min-height: 70dvh;
+      min-height: 80dvh;
       width: 100%;
       .app-wrapper,
       .form-wrapper {
@@ -117,13 +137,22 @@
       .vhr {
         background-color: white;
       }
+      .icon-wrapper {
+        padding: 1rem;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        z-index: 110;
+        font-size: 3rem;
+      }
       .form-wrapper {
         min-width: 410px;
         justify-content: center;
         .auth-forms {
           margin-left: 4rem;
           max-width: 420px;
-          width: 100%;
+          width: 90%;
         }
       }
     }

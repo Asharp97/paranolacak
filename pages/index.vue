@@ -96,7 +96,7 @@
         />
 
         <div class="comments">
-          <div v-for="(x, n) in comments" :key="n" class="comment">
+          <div v-for="(x, n) in comments" :key="n" class="comment from-below">
             <Icon :name="x.icon" class="icon" />
             <p>{{ x.text }}</p>
             <img src="../assets/imgs/Vector 5.svg" alt="" />
@@ -104,6 +104,7 @@
         </div>
       </div>
     </section>
+
     <section class="security container">
       <h2 class="cover-remove">Önceliğimiz sizin güvenliğiniz.</h2>
       <p class="gentle-slide">
@@ -141,6 +142,7 @@
 import Hero from "../components/hero.vue";
 import cashback from "@/content/cashback.json";
 import bill from "@/content/bill.json";
+definePageMeta({ layout: "transparent-nav" });
 const imgs = ["restaurant", "fam", "party", "rent"];
 const comments = [
   {
@@ -159,6 +161,9 @@ const comments = [
 </script>
 
 <style lang="scss" scoped>
+section {
+  padding-block: 10dvh;
+}
 .main {
   background: radial-gradient(circle at 100% 50dvh, $primary -10%, $white 34%);
 

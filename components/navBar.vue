@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="nav-wrapper">
-      <nav class="container hideMob">
+    <div class="nav-wrapper" :class="{ transparent: transparent }">
+      <nav class="container hideMob hideTab">
         <div class="menu">
           <NuxtLink to="/">
             <nuxt-img class="img desktop-logo" src="logo.png" />
@@ -15,16 +15,23 @@
           </NuxtLink>
         </div>
         <div class="auth">
-          <Btn variant="primary" text-color="white" destination="logIn"
+          <Btn
+            variant="primary"
+            text-color="white"
+            @click="modal.show = 'login'"
             >Giriş Yap</Btn
           >
-          <Btn variant="secondry" destination="signUp">Hesap Oluştur</Btn>
+          <Btn variant="secondry" @click="modal.show = 'signup'"
+            >Hesap Oluştur</Btn
+          >
         </div>
       </nav>
-      <nav class="showMob">
+      <nav class="showMob showTab">
         <div class="mobile-nav">
           <div class="nav container">
-            <nuxt-img class="img" src="logo.png" />
+            <NuxtLink to="/">
+              <nuxt-img class="img" src="logo.png" />
+            </NuxtLink>
             <div class="icon-wrapper" @click="showNav = true">
               <Icon
                 name="icon-park-outline:hamburger-button"
@@ -54,8 +61,10 @@
                 </NuxtLink>
                 <div class="hr" />
                 <div class="auth">
-                  <Btn variant="primary" destiation="LogIn">Giriş Yap</Btn>
-                  <Btn variant="secondryAlt" destiation="signUp"
+                  <Btn variant="primary" @click="modal.show = 'login'"
+                    >Giriş Yap</Btn
+                  >
+                  <Btn variant="secondryAlt" @click="modal.show = 'signup'"
                     >Hesap Oluştur</Btn
                   >
                 </div>
@@ -74,11 +83,23 @@
         </div>
       </nav>
     </div>
+    <Teleport to="body">
+      <Transition name="fade" class="modals">
+        <fscreen v-if="modal.show == 'login'">
+          <Log-in />
+        </fscreen>
+        <fscreen v-else-if="modal.show == 'signup'">
+          <Sign-up />
+        </fscreen>
+      </Transition>
+    </Teleport>
   </div>
 </template>
 
 <script setup>
+defineProps(["transparent"]);
 const showNav = ref(false);
+const modal = useModal();
 watch(showNav, () => {
   if (showNav.value == true) {
     document.body.classList.add("no-scroll"); // Add no-scroll class
@@ -103,18 +124,25 @@ const menu = [
 </script>
 
 <style lang="scss" scoped>
+.transparent {
+  background-color: transparent !important;
+  position: absolute;
+  // top: 0;
+  z-index: 100;
+}
 .nav-wrapper {
-  background-color: transparent;
   width: 100%;
   height: $navHeight;
   background-color: $black;
   color: white;
   display: flex;
   align-items: center;
+
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 100%;
     .menu {
       display: flex;
@@ -129,6 +157,12 @@ const menu = [
         display: flex;
         align-items: center;
         padding-inline: 10px;
+        .headers {
+          &:hover {
+            color: $primary;
+            transform: translateX(5px);
+          }
+        }
       }
       .router-link-active {
         .headers {
@@ -136,6 +170,10 @@ const menu = [
           border-radius: 0.25rem;
           padding-inline: 1rem;
           padding-block: 0.5rem;
+          color: black;
+          &:hover {
+            color: black;
+          }
         }
       }
     }

@@ -1,3 +1,27 @@
+@media only screen and (max-width: 768px) {
+  .hideTab {
+    display: none !important;
+  }
+  .showTab {
+    display: flex !important;
+  }
+  .login-wrapper {
+    .login {
+      .content {
+        .form-wrapper {
+          align-items: center !important;
+        }
+      }
+    }
+  }
+  .main {
+    .security {
+      .imgs {
+        gap: 40px;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 480px) {
   .hideMob {
     display: none !important;
@@ -21,7 +45,7 @@
         .form-wrapper {
           .auth-forms {
             margin: 0 !important;
-            .steps{
+            .steps {
               min-width: 320px;
             }
           }
@@ -39,7 +63,6 @@
     .security {
       .imgs {
         justify-content: center !important;
-        gap: 40px;
       }
     }
     .transfer {
@@ -63,7 +86,7 @@
         .comment {
           &:nth-child(2) {
             top: unset !important;
-            right: -3rem;
+            right: -3rem !important;
             bottom: -264px;
             img {
               top: -110px;
