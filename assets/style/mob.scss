@@ -1,3 +1,4 @@
+//TABLET
 @media only screen and (max-width: 768px) {
   .hideTab {
     display: none !important;
@@ -21,7 +22,28 @@
       }
     }
   }
+  .cards {
+    .campaigns {
+      justify-content: center !important;
+      gap: 2rem;
+    }
+  }
+  .nav-wrapper {
+    nav {
+      width: 100%;
+    }
+  }
+  footer {
+    .info {
+      justify-content: center !important;
+      .contact-info {
+        text-align: center !important;
+        justify-content: center !important;
+      }
+    }
+  }
 }
+//mobile
 @media only screen and (max-width: 480px) {
   .hideMob {
     display: none !important;
@@ -86,7 +108,7 @@
         .comment {
           &:nth-child(2) {
             top: unset !important;
-            right: -3rem !important;
+            right: 3rem !important;
             bottom: -264px;
             img {
               top: -110px;
@@ -99,11 +121,6 @@
           }
         }
       }
-    }
-  }
-  .nav-wrapper {
-    nav {
-      width: 100%;
     }
   }
 }
