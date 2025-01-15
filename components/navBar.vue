@@ -10,8 +10,10 @@
             v-for="(x, n) in menu"
             :key="n"
             :to="`/${x.link}`"
-            class="link-wrapper"
-            ><div class="headers">{{ x.name }}</div>
+            class="link-wrapper">
+            <div class="link">
+              <div v-for="n in 3" :key="n" class="headers">{{ x.name }}</div>
+            </div>
           </NuxtLink>
         </div>
         <div class="auth">
@@ -39,8 +41,7 @@
             <div class="icon-wrapper" @click="showNav = true">
               <Icon
                 name="icon-park-outline:hamburger-button"
-                class="hamburger icon"
-              />
+                class="hamburger icon" />
             </div>
           </div>
           <Transition name="slide-left">
@@ -55,8 +56,7 @@
                     <Icon
                       name="material-symbols:arrow-forward-ios-rounded"
                       class="forward icon"
-                      @click="showNav = false"
-                    />
+                      @click="showNav = false" />
                   </div>
                 </div>
                 <div class="hr" />
@@ -136,7 +136,7 @@ const menu = [
   background-color: transparent !important;
   position: absolute;
   // top: 0;
-  z-index: 100;
+  z-index: 50;
 }
 .nav-wrapper {
   width: 100%;
@@ -162,25 +162,32 @@ const menu = [
       .link-wrapper {
         height: 100%;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        height: 26%;
+        overflow-y: clip;
         padding-inline: 10px;
-        .headers {
+        .link {
           &:hover {
-            color: $primary;
-            transform: translateX(5px);
+            transform: translateY(-67%);
+            transition: 500ms;
+          }
+          .headers {
+            &:last-child {
+              // background-color: $primary;
+              color: $primary;
+              // color: black;
+            }
           }
         }
       }
       .router-link-active {
         .headers {
-          background-color: $primary;
-          border-radius: 0.25rem;
-          padding-inline: 1rem;
-          padding-block: 0.5rem;
-          color: black;
-          &:hover {
-            color: black;
-          }
+          color: $primary;
+          // background-color: $primary;
+          // border-radius: 0.25rem;
+          // padding-inline: 1rem;
+          // padding-block: 0.5rem;
+          // color: black;
         }
       }
     }

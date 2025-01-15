@@ -1,5 +1,5 @@
 <template>
-  <section class="hero-component section-bg">
+  <section class="hero-component section-bg" :class="{ grad: video }">
     <div class="section container" :class="{ inv: inv }">
       <div class="text" :class="{ white: video }">
         <h1>{{ header }}</h1>
@@ -11,12 +11,11 @@
       </div>
       <video
         v-if="video"
-        class="video-src"
+        class="video-src hideTab"
         autoplay
         muted
         playsinline
-        src="https://ik.imagekit.io/sharp/paranolacak/hero.mp4"
-      />
+        src="https://ik.imagekit.io/sharp/paranolacak/hero.mp4" />
     </div>
   </section>
 </template>
@@ -26,6 +25,9 @@ defineProps(["inv", "header", "paragraph", "img", "maxWidth", "video"]);
 </script>
 
 <style lang="scss" scoped>
+.grad {
+  background: radial-gradient(circle at 100% 25dvh, $primary -200%, $black 74%);
+}
 .section-bg {
   position: relative;
   .section {

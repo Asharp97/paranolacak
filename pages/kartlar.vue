@@ -14,8 +14,7 @@
         :key="n"
         class="img from-below"
         :style="`animation-range:cover ${30 + n * 5}% cover ${40 + n * 5}%;`"
-        :src="`campaign${n - 1}.png`"
-      />
+        :src="`campaign${n - 1}.png`" />
     </section>
     <section class="advantage">
       <nuxt-img class="img zoom-out" src="thought.png" />
@@ -117,7 +116,7 @@ const steps = ref([
     justify-content: space-between;
     max-width: 1590px;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
     margin-inline: auto;
     margin-top: 10rem;
     .img {
@@ -169,7 +168,10 @@ const steps = ref([
     width: 100%;
     margin-block: 4rem;
     .text {
-      max-width: min(45rem, 100%);
+      // width: min(45rem, 100%);
+      max-width: 45rem;
+      width: 48%;
+      min-width: 18rem;
     }
     .img {
       max-width: 1300px;
