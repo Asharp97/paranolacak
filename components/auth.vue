@@ -32,18 +32,7 @@
         </Transition>
         <div class="form-wrapper">
           <div class="user-wrapper">
-            <div v-if="session.user" class="user">
-              <p>
-                Hoş geldiniz <span> Sn {{ session.user }}</span>
-              </p>
-              <Btn
-                variant="secondry"
-                text-color="white"
-                text="Çıkış Yap"
-                @click="session.reset()"
-              />
-            </div>
-
+            <user-comp />
             <div class="close-hover-area">
               <div class="close-wrapper" @click="modal.show = null">
                 <Icon name="material-symbols:close-rounded" class="icon" />
@@ -168,6 +157,9 @@ onKeyStroke("Escape", () => {
         }
         .close-hover-area {
           height: 4rem;
+          width: 4rem;
+          display: flex;
+          justify-content: end;
           &:hover {
             .close-wrapper {
               padding-inline: 0.5rem;
@@ -175,7 +167,7 @@ onKeyStroke("Escape", () => {
               font-size: 2rem;
               background-color: white;
               color: black;
-              .icon{
+              .icon {
                 transform: translateY(4px);
               }
             }
@@ -184,7 +176,7 @@ onKeyStroke("Escape", () => {
           .close-wrapper {
             color: white;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 2rem;
             height: fit-content;
             border-radius: 0 0 0 1rem;
           }

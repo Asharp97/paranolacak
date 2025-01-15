@@ -4,17 +4,17 @@
       <auth-steps :step="activeStep" @activate-step="activateStep" />
       <div v-if="activeStep == 1">
         <h6 class="title">Lütfen özçekim fotoğrafınızı yükleyin.</h6>
-        <File-upload @send-image="recieveImage(activeStep)" />
+        <File-upload @send-image="recieveImage" />
       </div>
       <div v-if="activeStep == 2">
         <h6 class="title">
           Lütfen T.C. Kimlik kartınızın arka yüz fotoğrafını yükleyin.
         </h6>
-        <File-upload />
+        <File-upload @send-image="recieveImage" />
       </div>
       <div v-if="activeStep == 3">
         <h6 class="title">Lütfen özçekim fotoğrafınızı yükleyin.</h6>
-        <File-upload />
+        <File-upload @send-image="recieveImage" />
       </div>
       <div v-if="activeStep == 4">
         <h6 class="title">Kimlik doğrulama işleminiz kontrol ediliyor.</h6>
@@ -23,7 +23,6 @@
           taktirde KYC işlemini tekrarlamanız gerekir.
         </p>
       </div>
-
       <Btn
         v-if="activeStep <= 3"
         text="Devam Et"
@@ -37,9 +36,8 @@
 <script setup>
 const activeStep = ref(1);
 const activateStep = (x) => (activeStep.value = x);
-const recieveImage = (x) => {
-  console.log("imgfile is: " + x);
-};
+const recieveImage = (name, file) =>
+  console.log("imgfile is: " + name + " " + file);
 </script>
 
 <style lang="scss" scoped></style>

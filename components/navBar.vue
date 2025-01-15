@@ -10,13 +10,15 @@
             v-for="(x, n) in menu"
             :key="n"
             :to="`/${x.link}`"
-            class="link-wrapper">
+            class="link-wrapper"
+          >
             <div class="link">
               <div v-for="n in 3" :key="n" class="headers">{{ x.name }}</div>
             </div>
           </NuxtLink>
         </div>
-        <div class="auth">
+        <user-comp />
+        <div v-if="!session.user" class="auth">
           <Btn
             variant="primary"
             text-color="white"
@@ -41,7 +43,8 @@
             <div class="icon-wrapper" @click="showNav = true">
               <Icon
                 name="icon-park-outline:hamburger-button"
-                class="hamburger icon" />
+                class="hamburger icon"
+              />
             </div>
           </div>
           <Transition name="slide-left">
@@ -56,7 +59,8 @@
                     <Icon
                       name="material-symbols:arrow-forward-ios-rounded"
                       class="forward icon"
-                      @click="showNav = false" />
+                      @click="showNav = false"
+                    />
                   </div>
                 </div>
                 <div class="hr" />
@@ -64,7 +68,7 @@
                   ><h4>{{ x.name }}</h4>
                 </NuxtLink>
                 <div class="hr" />
-                <div class="auth">
+                <div v-if="!session.user" class="auth">
                   <Btn variant="primary" @click="modal.show = 'login'"
                     >Giriş Yap</Btn
                   >
@@ -72,6 +76,7 @@
                     >Hesap Oluştur</Btn
                   >
                 </div>
+                <user-comp :inv="true" />
                 <div class="footer">
                   <div class="logo">
                     <nuxt-img class="img" src="miniLogoDark.png" />
@@ -108,6 +113,7 @@
 defineProps(["transparent"]);
 const showNav = ref(false);
 const modal = useModal();
+const session = useSession();
 watch(showNav, () => {
   if (showNav.value == true) {
     document.body.classList.add("no-scroll"); // Add no-scroll class
@@ -154,10 +160,13 @@ const menu = [
     .menu {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       height: 100%;
-      gap: 55px;
+      max-width: 38rem;
+      width: 100%;
       .desktop-logo {
         width: 150px;
+        transform: translateY(3px);
       }
       .link-wrapper {
         height: 100%;

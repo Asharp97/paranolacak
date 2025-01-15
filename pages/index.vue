@@ -161,7 +161,7 @@ section {
 }
 .main {
   background: radial-gradient(circle at 100% 50dvh, $primary -10%, $white 34%);
-
+  overflow-x: clip;
   .landing {
     padding-top: $navHeight;
 

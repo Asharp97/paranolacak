@@ -1,5 +1,5 @@
 <template>
-  <div class="input-wrapper file-input">
+  <TransitionGroup name="slide" tag="div" class="input-wrapper file-input">
     <input
       ref="imageUploadReference"
       type="file"
@@ -16,12 +16,12 @@
     </button>
     <div v-if="imgName" class="file-name">
       <p>{{ imgName }}</p>
-      <Icon name="material-symbols:close" class="icon" @click="clearImage" />
+      <Icon name="material-symbols:delete-rounded" class="icon" @click="clearImage" />
     </div>
     <div v-if="error" class="errormessage">
       {{ error }}
     </div>
-  </div>
+  </TransitionGroup>
 </template>
 
 <script setup>
@@ -35,7 +35,7 @@ const imageSelected = (event) => {
     error.value = null;
     imgFile = event.target.files[0];
     imgName.value = event.target.files[0].name;
-    emit("sendImg");
+    emit("sendImg", imgName.value, imgFile);
   } else error.value = "Resmin formate olması gerekiyor";
 };
 
