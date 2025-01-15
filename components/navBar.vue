@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav-wrapper" :class="{ transparent: transparent }">
-      <nav class="container hideMob hideTab">
+      <nav class="desktop-nav container hideMob hideTab">
         <div class="menu">
           <NuxtLink to="/">
             <nuxt-img class="img desktop-logo" src="logo.png" />
@@ -24,9 +24,13 @@
           <Btn variant="secondry" @click="modal.show = 'signup'"
             >Hesap Oluştur</Btn
           >
+          <!-- remove meeeeee -->
+          <Btn variant="secondry" @click="modal.show = 'kimlik-foto'"
+            >kimlik-foto</Btn
+          >
         </div>
       </nav>
-      <nav class="showMob showTab">
+      <nav class="mobile-nav showMob showTab">
         <div class="mobile-nav">
           <div class="nav container">
             <NuxtLink to="/">
@@ -91,6 +95,10 @@
         <fscreen v-else-if="modal.show == 'signup'">
           <Sign-up />
         </fscreen>
+        <!-- remove meeeeeee  -->
+        <fscreen v-else-if="modal.show == 'kimlik-foto'">
+          <kimlik-foto />
+        </fscreen>
       </Transition>
     </Teleport>
   </div>
@@ -142,7 +150,6 @@ const menu = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     height: 100%;
     .menu {
       display: flex;
@@ -183,86 +190,86 @@ const menu = [
       width: 100%;
       max-width: 240px;
     }
-    .mobile-nav {
+  }
+  .mobile-nav {
+    width: 100%;
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .img {
+        width: 50%;
+        min-width: 180px;
+      }
+    }
+    .icon-wrapper {
+      font-size: 1.5rem;
+    }
+    .menu {
       width: 100%;
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .img {
-          width: 50%;
-          min-width: 180px;
-        }
-      }
-      .icon-wrapper {
-        font-size: 1.5rem;
-      }
-      .menu {
-        width: 100%;
-        height: 100dvh;
-        position: absolute;
-        z-index: 10;
-        backdrop-filter: blur(1rem);
-        background-color: rgba(0, 0, 0, 0.418);
-        top: 0;
-        display: flex;
-        justify-content: end;
-        .router-link-active {
-          h4 {
-            background-color: $primary;
-            padding: 1rem;
-            border-radius: 4px;
-          }
-        }
-
-        .menu-content {
-          display: flex;
-          flex-direction: column;
-          background-color: $white;
-          height: 100dvh;
-          width: 60%;
-          color: $black;
+      height: 100dvh;
+      position: absolute;
+      z-index: 10;
+      backdrop-filter: blur(1rem);
+      background-color: rgba(0, 0, 0, 0.418);
+      top: 0;
+      display: flex;
+      justify-content: end;
+      .router-link-active {
+        h4 {
+          background-color: $primary;
           padding: 1rem;
-          border-radius: 1rem 0 0 1rem;
-          gap: 2rem;
+          border-radius: 4px;
+        }
+      }
 
-          .back {
+      .menu-content {
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        height: 100dvh;
+        width: 60%;
+        color: $black;
+        padding: 1rem;
+        border-radius: 1rem 0 0 1rem;
+        gap: 2rem;
+
+        .back {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          * {
+            height: 2rem;
+          }
+          .icon-wrapper {
+            background-color: black;
+            width: 2rem;
+            border-radius: 1rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            width: 100%;
-            * {
-              height: 2rem;
-            }
-            .icon-wrapper {
-              background-color: black;
-              width: 2rem;
-              border-radius: 1rem;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-left: auto;
-              .forward {
-                color: $primary;
-              }
+            justify-content: center;
+            margin-left: auto;
+            .forward {
+              color: $primary;
             }
           }
-          .footer {
-            margin-top: auto;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
-            .logo {
-              .img {
-                width: 2rem;
-              }
+        }
+        .footer {
+          margin-top: auto;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          gap: 1rem;
+          .logo {
+            .img {
+              width: 2rem;
             }
-            .copyright {
-              p {
-                font-size: 11px;
-                color: gray;
-              }
+          }
+          .copyright {
+            p {
+              font-size: 11px;
+              color: gray;
             }
           }
         }

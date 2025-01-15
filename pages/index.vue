@@ -9,7 +9,7 @@
         <span>paran</span> olacak<span> kart</span> ile yaptığın alışverişlerden
         iade kazan veya saniyeler içerisinde hesabından transfer yap.
       </p>
-      <Btn variant="primary" destination="signUp">
+      <Btn variant="primary" @click="modal.show = 'signup'">
         Hesap Oluştur
         <Icon name="material-symbols:arrow-right-alt-rounded" class="icon" />
       </Btn>
@@ -143,6 +143,7 @@ import Hero from "../components/hero.vue";
 import cashback from "@/content/cashback.json";
 import bill from "@/content/bill.json";
 definePageMeta({ layout: "transparent-nav" });
+const modal = useModal();
 const imgs = ["restaurant", "fam", "party", "rent"];
 const comments = [
   {

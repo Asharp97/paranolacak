@@ -8,5 +8,7 @@ export const useModal = defineStore("modal", () => {
     show.value = "";
   }
 
+  
+
   return { show, close };
 });

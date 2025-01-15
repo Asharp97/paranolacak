@@ -10,7 +10,7 @@
           paranolacak kartın ile yükledikçe harca, harcadıkça kazan. Hemen
           başvur kartını sana ulaştıralım.
         </p>
-        <btn class="gentle-slide" variant="primary" destination="signUP"
+        <btn class="gentle-slide" variant="primary"   @click="modal.show = 'signup'"
           >Başvur</btn
         >
       </div>
@@ -18,7 +18,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const modal = useModal()
+</script>
 
 <style lang="scss" scoped>
 .to-action-wrapper {

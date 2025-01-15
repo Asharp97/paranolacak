@@ -12,6 +12,6 @@
   top: 0;
   height: 100dvh;
   width: 100%;
-  z-index: 100;
+  z-index: 500;
 }
 </style>

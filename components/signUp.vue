@@ -84,9 +84,8 @@
 <script setup>
 const activeStep = ref(1);
 const modal = useModal();
-const activateStep = (x) => {
-  activeStep.value = x;
-};
+const activateStep = (x) => (activeStep.value = x);
+
 const input = useTemplateRef("inputfocus");
 onMounted(() => {
   input.value.focus();

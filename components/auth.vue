@@ -31,12 +31,24 @@
           <div class="vhr hideTab" />
         </Transition>
         <div class="form-wrapper">
-          <div class="icon-wrapper">
-            <Icon
-              name="material-symbols-light:cancel-rounded"
-              class="icon"
-              @click="modal.show = null"
-            />
+          <div class="user-wrapper">
+            <div v-if="session.user" class="user">
+              <p>
+                Hoş geldiniz <span> Sn {{ session.user }}</span>
+              </p>
+              <Btn
+                variant="secondry"
+                text-color="white"
+                text="Çıkış Yap"
+                @click="session.reset()"
+              />
+            </div>
+
+            <div class="close-hover-area">
+              <div class="close-wrapper" @click="modal.show = null">
+                <Icon name="material-symbols:close-rounded" class="icon" />
+              </div>
+            </div>
           </div>
           <Transition appear name="special-right">
             <div class="auth-forms">
@@ -52,6 +64,7 @@
 <script setup>
 import { onKeyStroke } from "@vueuse/core";
 const modal = useModal();
+const session = useSession();
 
 onKeyStroke("Escape", () => {
   modal.show = null;
@@ -62,7 +75,6 @@ onKeyStroke("Escape", () => {
 .login-wrapper {
   background: radial-gradient(circle at 100% 25dvh, $primary -200%, $black 74%);
   display: flex;
-  align-items: center;
   height: 100%;
   color: white;
   .mob-app {
@@ -137,14 +149,46 @@ onKeyStroke("Escape", () => {
       .vhr {
         background-color: white;
       }
-      .icon-wrapper {
-        padding: 1rem;
-        cursor: pointer;
+      .user-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         position: absolute;
-        top: 1rem;
-        right: 2rem;
+        top: 0;
+        right: 0;
         z-index: 110;
-        font-size: 3rem;
+        .user {
+          padding-block: 1rem;
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          span {
+            font-weight: 700;
+          }
+        }
+        .close-hover-area {
+          height: 4rem;
+          &:hover {
+            .close-wrapper {
+              padding-inline: 0.5rem;
+              padding-block: 0.25rem;
+              font-size: 2rem;
+              background-color: white;
+              color: black;
+              .icon{
+                transform: translateY(4px);
+              }
+            }
+          }
+
+          .close-wrapper {
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            height: fit-content;
+            border-radius: 0 0 0 1rem;
+          }
+        }
       }
       .form-wrapper {
         min-width: 410px;

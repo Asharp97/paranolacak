@@ -6,7 +6,7 @@ export const useSession = defineStore(
     const user = ref("");
     const token = ref("");
 
-    function clear() {
+    function reset() {
       user.value = "";
       token.value = "";
     }
@@ -15,7 +15,7 @@ export const useSession = defineStore(
       token.value = x.session;
     }
 
-    return { user, token, clear, set };
+    return { user, token, reset, set };
   },
   {
     persist: true,

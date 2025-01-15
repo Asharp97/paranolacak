@@ -13,11 +13,16 @@
         text-color="white"
         @click="modal.show = 'signup'"
       />
+      <!-- remove meeeee -->
+      <button @click="session.set({ user: 'Ali Elsayed', session: '123123123' })">
+        quick login
+      </button>
     </TransitionGroup>
   </Auth>
 </template>
 <script setup>
 const modal = useModal();
+const session = useSession();
 </script>
 
 <style lang="scss" scoped></style>
