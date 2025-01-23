@@ -136,19 +136,19 @@ h4 {
 }
 
 h5 {
-  font-size: clamp(0.875rem, 2vw, 1.42rem); /* 14px - 22.7px */
+  // font-size: clamp(0.875rem, 2vw, 1.42rem); /* 14px - 22.7px */
   font-weight: 900;
 }
 
 h6 {
-  font-size: clamp(0.75rem, 1.8vw, 1.125rem); /* 12px - 18px */
+  // font-size: clamp(0.75rem, 1.8vw, 1.125rem); /* 12px - 18px */
   font-weight: 700;
 }
 
 p,
 .p {
-  font-size: clamp(0.875rem, 2.2vw, 1.25rem); /* 14px - 20px */
-  font-weight: 400;
+  // font-size: clamp(0.875rem, 2.2vw, 1.25rem); /* 14px - 20px */
+  // font-weight: 400;
 }
 
 p span {

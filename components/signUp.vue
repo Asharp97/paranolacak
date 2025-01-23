@@ -116,12 +116,14 @@ form {
   min-width: 350px;
   max-width: 410px;
 }
-
+.title {
+  font-size: $font18;
+}
 button {
   all: unset;
 }
 .subtitle {
-  color: #b1b1b1;
+  color: $grey;
   font-size: 13.241px;
   font-weight: 600;
 }

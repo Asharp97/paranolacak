@@ -5,7 +5,7 @@
     </div>
     <Btn
       :variant="inv ? 'fill' : 'secondry'"
-      :text-color="{ 'white' : !inv }"
+      :text-color="{ white: !inv }"
       text="Çıkış Yap"
       @click="session.reset()"
     />

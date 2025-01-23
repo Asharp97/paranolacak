@@ -110,31 +110,20 @@
 </template>
 
 <script setup>
-defineProps(["transparent"]);
+defineProps(["transparent", "menu"]);
 const showNav = ref(false);
 const modal = useModal();
 const session = useSession();
+// const lenis = useLenis();
 watch(showNav, () => {
   if (showNav.value == true) {
     document.body.classList.add("no-scroll"); // Add no-scroll class
+    // lenis.stop();
   } else {
     document.body.classList.remove("no-scroll"); // Remove no-scroll class
+    // lenis.start();
   }
 });
-const menu = [
-  {
-    link: "kartlar",
-    name: "Kartlar",
-  },
-  {
-    link: "ucretler-limitler",
-    name: "Ücretler & Limitler",
-  },
-  {
-    link: "paranolacak",
-    name: "Paranolacak",
-  },
-];
 </script>
 
 <style lang="scss" scoped>

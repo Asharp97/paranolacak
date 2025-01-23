@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/scripts",
     "@nuxt/image",
+    "radix-vue/nuxt",
     "v-gsap-nuxt",
   ],
   image: {

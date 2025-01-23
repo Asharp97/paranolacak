@@ -7,7 +7,7 @@ $black: #1f1f1f;
 
 $cloudgrey: #f7f7f6;
 $lightgrey: #f0efef;
-$grey: #dcdcdc;
+$grey: #b1b1b1;
 $dimgrey: #bebebe;
 $red: #ff3232;
 
@@ -20,3 +20,11 @@ $drift: cubic-bezier(1, 0, 0.6, 1.1);
 
 $brake: cubic-bezier(0, 1, 0.6, 1);
 $reversebrake: cubic-bezier(0.6, 1, 0, 1);
+
+$font76: clamp(1.5rem, 4vw, 4.75rem); /* 24px - 76px */
+$font54: clamp(1.25rem, 3.5vw, 3.43rem); /* 20px - 54.857px */
+$font46: clamp(1.125rem, 3vw, 2.875rem); /* 18px - 46px */
+$font34: clamp(1rem, 2.5vw, 2.13rem); /* 16px - 34.049px */
+$font22: clamp(0.875rem, 2vw, 1.42rem); /* 14px - 22.7px */
+$font18: clamp(0.75rem, 1.8vw, 1.125rem); /* 12px - 18px */
+$font15: clamp(0.75rem, 1.5vw, 0.9375rem); /* 12px - 15px */

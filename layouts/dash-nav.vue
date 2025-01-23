@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav-bar :transparent="true" :menu="menu.main" />
+    <nav-bar :menu="menu.dashboard" />
     <slot />
     <Foot />
   </div>

@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <nav-bar :transparent="true" :menu="menu.main" />
-    <slot />
-    <Foot />
-  </div>
+  <DashboardLayout :menu="menu.transfers" title="Transferler">
+    PHone
+  </DashboardLayout>
 </template>
 
 <script setup>

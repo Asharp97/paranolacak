@@ -1,11 +1,13 @@
 <template>
   <div>
-    <nav-bar />
+    <nav-bar :menu="menu.main" />
     <slot />
     <Foot />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import menu from "@/content/menus.json";
+</script>
 
 <style lang="scss" scoped></style>

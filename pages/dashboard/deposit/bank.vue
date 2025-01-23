@@ -1,8 +1,8 @@
 <template>
   <div>
-    <nav-bar :transparent="true" :menu="menu.main" />
-    <slot />
-    <Foot />
+    <DashboardLayout :menu="menu.deposit" title="Transferler">
+      bank
+    </DashboardLayout>
   </div>
 </template>
 

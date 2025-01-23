@@ -1,0 +1,65 @@
+{
+  "main": [
+    {
+      "link": "kartlar",
+      "name": "Kartlar"
+    },
+    {
+      "link": "ucretler-limitler",
+      "name": "Ücretler & Limitler"
+    },
+    {
+      "link": "paranolacak",
+      "name": "Paranolacak"
+    }
+  ],
+  "dashboard": [
+    {
+      "link": "dashboard/transfers/iban",
+      "name": "Transferler"
+    },
+    {
+      "link": "dashboard/deposit/iban",
+      "name": "Para Yatır"
+    },
+    {
+      "link": "dashboard/withdraw",
+      "name": "Para Çek"
+    },
+    {
+      "link": "dashbaord/paranolacak-Card",
+      "name": "paranolacak Kart"
+    }
+  ],
+  "transfers": [
+    {
+      "title": "IBAN ile gönder",
+      "link": "/dashboard/transfers/iban"
+    },
+    {
+      "title": "Cep Telefonu ile gönder",
+      "link": "/dashboard/transfers/telephone"
+    }
+  ],
+  "deposit": [
+    {
+      "title": "IBAN ile yatır",
+      "link": "/dashboard/deposit/iban"
+    },
+    {
+      "title": "Banka/Kredi Kartı ile yatır",
+      "link": "/dashboard/deposit/bank"
+    },
+    {
+      "title": "Havale/EFT ile yatır",
+      "link": "/dashboard/deposit/transfer"
+    }
+  ],
+  "withdraw": [
+    {
+      "title": "IBAN ile çek",
+      "description": "Buradan yalnızca başka banka hesabınıza para gönderebilirsiniz. Fiziki para çekmek için paranolacak kartınız ile tüm ATM’lerden anında nakit çekebilirsiniz.",
+      "link": "/dashboard/withdraw"
+    }
+  ]
+}

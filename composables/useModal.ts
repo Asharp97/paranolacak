@@ -2,13 +2,11 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 
 export const useModal = defineStore("modal", () => {
-  const show = ref("");
+  const show = ref(null);
 
   function close() {
-    show.value = "";
+    show.value = null;
   }
-
-  
 
   return { show, close };
 });
