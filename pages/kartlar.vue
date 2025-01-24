@@ -110,18 +110,23 @@ const steps = ref([
     h4 {
       margin-top: 2rem;
     }
+    h5 {
+      font-size: $font20;
+    }
   }
   .campaigns {
     display: flex;
     justify-content: space-between;
+    gap: clamp(0.5rem, 5vw, 3rem);
     max-width: 1590px;
     flex-wrap: wrap;
     width: 90%;
     margin-inline: auto;
     margin-top: 10rem;
     .img {
-      max-width: 22rem;
-      width: 100%;
+      flex: 1 1 calc(25% - clamp(0.5rem, 5vw, 3rem));
+      max-width: calc(25% - clamp(0.5rem, 5vw, 1rem));
+      min-width: 300px;
     }
   }
   .advantage {
@@ -155,6 +160,7 @@ const steps = ref([
       h5 {
         font-weight: 400;
         max-width: 29rem;
+        font-size: $font22;
         span {
           font-weight: 700;
         }
@@ -172,6 +178,9 @@ const steps = ref([
       max-width: 45rem;
       width: 48%;
       min-width: 18rem;
+      p {
+        font-size: $font20;
+      }
     }
     .img {
       max-width: 1300px;
@@ -220,6 +229,9 @@ const steps = ref([
           li {
             display: flex;
             gap: 10px;
+            h5 {
+              font-size: $font22;
+            }
             &:nth-child(2) {
               margin-left: auto;
             }
@@ -246,6 +258,7 @@ const steps = ref([
             }
             p {
               max-width: 280px;
+              font-size: $font20;
             }
           }
         }

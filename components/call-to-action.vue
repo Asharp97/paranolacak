@@ -52,6 +52,7 @@ const modal = useModal()
       }
     }
     p {
+      font-size: $font20;
       min-width: 10px;
       margin-top: 1rem;
       margin-bottom: 2rem;

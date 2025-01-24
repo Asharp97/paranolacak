@@ -15,11 +15,10 @@
     "@nuxt/image": "1.8.1",
     "@nuxt/scripts": "0.9.5",
     "@nuxt/test-utils": "3.15.1",
+    "maz-ui": "^3.50.1",
     "nuxt": "^3.15.0",
     "nuxt3-lenis": "^1.5.9",
     "pinia": "^2.3.0",
-    "radix-vue": "^1.9.12",
-    "v-gsap-nuxt": "1.1.9",
     "vue": "latest",
     "vue-router": "latest"
   },

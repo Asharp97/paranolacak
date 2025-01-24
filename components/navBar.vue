@@ -10,8 +10,7 @@
             v-for="(x, n) in menu"
             :key="n"
             :to="`/${x.link}`"
-            class="link-wrapper"
-          >
+            class="link-wrapper">
             <div class="link">
               <div v-for="n in 3" :key="n" class="headers">{{ x.name }}</div>
             </div>
@@ -43,8 +42,7 @@
             <div class="icon-wrapper" @click="showNav = true">
               <Icon
                 name="icon-park-outline:hamburger-button"
-                class="hamburger icon"
-              />
+                class="hamburger icon" />
             </div>
           </div>
           <Transition name="slide-left">
@@ -59,8 +57,7 @@
                     <Icon
                       name="material-symbols:arrow-forward-ios-rounded"
                       class="forward icon"
-                      @click="showNav = false"
-                    />
+                      @click="showNav = false" />
                   </div>
                 </div>
                 <div class="hr" />

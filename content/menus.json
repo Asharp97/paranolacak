@@ -61,5 +61,22 @@
       "description": "Buradan yalnızca başka banka hesabınıza para gönderebilirsiniz. Fiziki para çekmek için paranolacak kartınız ile tüm ATM’lerden anında nakit çekebilirsiniz.",
       "link": "/dashboard/withdraw"
     }
+  ],
+  "user": [
+    {
+      "label": "Hesabım"
+    },
+    {
+      "label": "Ayarlar"
+    },
+    {
+      "label": "Destek Merkezi"
+    },
+    {
+      "label": "Limitlerim"
+    },
+    {
+      "label": "Güvenli Çıkış"
+    }
   ]
 }

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Lenis root>
+    <!-- <Lenis root> -->
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
-    </Lenis>
+    <!-- </Lenis> -->
   </div>
 </template>
 
