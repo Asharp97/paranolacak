@@ -15,10 +15,12 @@
   ],
   "dashboard": [
     {
+      "parent": "dashboard/transfers",
       "link": "dashboard/transfers/iban",
       "name": "Transferler"
     },
     {
+      "parent": "dashboard/deposit",
       "link": "dashboard/deposit/iban",
       "name": "Para Yatır"
     },

@@ -1,11 +1,7 @@
 export function validateGSM(value) {
   // Remove any non-digit characters for simplicity
 
-  // Validate Turkish GSM Number
-  const gsmRegex = /^(?:90|0)?5\d{9}$/; // Matches +905XXXXXXXX or 05XXXXXXXX
-  if (gsmRegex.test(value) || !value) {
-    return { isValid: true, error: null, type: "GSM", value: value };
-  }
+  validatePhone(value)
 
   if (/^\d+$/.test(value) && value.toString().length == 11) {
     return { isValid: true, error: null, type: "TCKN" };
@@ -30,4 +26,10 @@ export function validatePassword(password: string): {
   }
 
   return { isValid: true, error: null };
+}
+export function validatePhone(value) {
+  const gsmRegex = /^(?:90|0)?5\d{9}$/; // Matches +905XXXXXXXX or 05XXXXXXXX
+  if (gsmRegex.test(value) || !value) {
+    return { isValid: true, error: null, type: "GSM", value: value };
+  }
 }

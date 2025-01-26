@@ -1,10 +1,12 @@
 <template>
   <div v-if="session.user" class="user">
     <div class="trigger">
-      <p>
-        Hoş geldiniz <span> Sn {{ session.user }}</span>
-      </p>
-      <drop-down :options="userMenu" />
+      <drop-down :options="userMenu">
+        <p>
+          Hoş geldiniz <span> Sn {{ session.user }}</span>
+        </p>
+        <Icon name="material-symbols:keyboard-arrow-down" class="icon" />
+      </drop-down>
     </div>
     <Btn
       :variant="inv ? 'fill' : 'secondry'"
@@ -15,31 +17,33 @@
 </template>
 
 <script setup>
-import menu from "@/content/menus.json";
 defineProps(["inv"]);
 const session = useSession();
 const userMenu = [
-  { label: "Action", action: () => session.reset() },
-  { label: "Link (href)", href: "https://www.google.com", target: "_blank" },
-  { label: "Router Link", to: { name: "index" } },
+  { label: "Hesabım", to: { name: "dashboard" } },
+  { label: "Ayarlar", to: { name: "index" } },
+  { label: "Destek Merkezi", to: { name: "index" } },
+  { label: "Limitlerim", to: { name: "ucretler-limitler" } },
+  { label: "Güvenli Çıkış", action: () => session.reset() },
 ];
 </script>
 
 <style lang="scss" scoped>
-.trigger {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  p {
-    white-space: nowrap;
-  }
-}
-.icon {
-  color: white;
-}
 .user {
   display: flex;
   align-items: center;
   gap: 1rem;
+  .trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    p {
+      color: white;
+      white-space: nowrap;
+    }
+  }
+  .icon {
+    color: white;
+  }
 }
 </style>

@@ -10,7 +10,8 @@
             v-for="(x, n) in menu"
             :key="n"
             :to="`/${x.link}`"
-            class="link-wrapper">
+            class="link-wrapper"
+            :class="{ active: isActive(`/${x.parent}`) }">
             <div class="link">
               <div v-for="n in 3" :key="n" class="headers">{{ x.name }}</div>
             </div>
@@ -111,6 +112,9 @@ defineProps(["transparent", "menu"]);
 const showNav = ref(false);
 const modal = useModal();
 const session = useSession();
+const route = useRoute();
+
+const isActive = (parentPath) => route.path.startsWith(parentPath);
 // const lenis = useLenis();
 watch(showNav, () => {
   if (showNav.value == true) {
@@ -175,7 +179,8 @@ watch(showNav, () => {
           }
         }
       }
-      .router-link-active {
+      .router-link-active,
+      .active {
         .headers {
           color: $primary;
           // background-color: $primary;

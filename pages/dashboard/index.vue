@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dashboard-layout>
+    <dashboard-layout sub="Hesap Hareketleri">
       <template #side>
         <div class="account-summary">
           <header class="account-header">
@@ -17,13 +17,24 @@
           </div>
 
           <!-- Account Type -->
-          <div class="account-type">
-            <Icon name="emojione:flag-for-turkey" class="icon" />
-            <span>Türk Lirası Hesabım</span>
-            <button class="dropdown-button" aria-label="Open dropdown menu">
-              <Icon name="material-symbols:arrow-drop-down" class="icon" />
-            </button>
-          </div>
+          <!-- <div class="account-type">
+            <Icon :name="accounts[accountType - 1].icon" class="icon" />
+            <MazSelect
+              v-slot="{ option }"
+              v-model="accountType"
+              color="white"
+              :no-chevron="true"
+              :no-border="true"
+              :options="accounts">
+              <div class="account-option">
+                <div class="icon-wrapper">
+                  <Icon :name="option.icon" class="icon" />
+                </div>
+                <strong> {{ option.label }} </strong>
+              </div>
+            </MazSelect>
+            <span>Türk Lirası Hesabım</span> 
+          </div> -->
 
           <!-- Action Buttons -->
           <div class="actions">
@@ -57,7 +68,6 @@
         </div>
       </template>
 
-      <h1 class="account-title">Hesap Hareketleri</h1>
       <div
         v-for="(x, n) in history"
         :key="n"
@@ -66,8 +76,7 @@
           { deposit: x.type == 'deposit' },
           { shopping: x.type == 'shopping' },
         ]"
-        class="account-history"
-      >
+        class="account-history">
         <div class="details">
           <div class="icons">
             <div v-if="x.type == 'withdraw'" class="icon-wrapper withdraw">
@@ -76,14 +85,12 @@
             <div v-else-if="x.type == 'shopping'" class="icon-wrapper deposit">
               <Icon
                 name="material-symbols-light:shopping-bag"
-                class="icon history-type"
-              />
+                class="icon history-type" />
             </div>
             <div v-else-if="x.type == 'deposit'" class="icon-wrapper shopping">
               <Icon
                 name="material-symbols:add-2-rounded"
-                class="icon history-type"
-              />
+                class="icon history-type" />
             </div>
           </div>
           <div>
@@ -128,6 +135,24 @@ const history = [
     date: "11.12.2024",
   },
 ];
+// const accounts = [
+//   {
+//     icon: "emojione:flag-for-turkey",
+//     label: "TRY",
+//     value: 1,
+//   },
+//   {
+//     icon: "emojione:flag-for-us-outlying-islands",
+//     label: "USD",
+//     value: 2,
+//   },
+//   {
+//     icon: "emojione:flag-for-european-union",
+//     label: "Euro",
+//     value: 3,
+//   },
+// ];
+// const accountType = ref(1);
 </script>
 
 <style lang="scss" scoped>
@@ -164,14 +189,21 @@ const history = [
     align-items: center;
     cursor: pointer;
     color: $dimgrey;
+    .m-select-list-item.--is-keyboard-selected {
+      background-color: blue !important;
+    }
+    .m-select {
+      min-width: 100%;
 
-    .icon {
-    }
-    span {
-    }
-    .dropdown-button {
-      all: unset;
-      .icon {
+      .account-option {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+
+        .icon-wrapper {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -185,13 +217,18 @@ const history = [
     display: flex;
     align-items: center;
     gap: 1rem;
+    .img {
+      max-width: 200px;
+      flex: 1;
+    }
     .card-details {
+      flex: 1;
       font-size: $font22;
       cursor: pointer;
     }
   }
   h2 {
-    font-size: $font15;
+    font-size: $font22;
     font-weight: 700;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -208,10 +245,6 @@ const history = [
   }
 }
 
-.account-title {
-  font-size: $font22;
-  margin-bottom: 1rem;
-}
 .account-history {
   display: flex;
   justify-content: space-between;

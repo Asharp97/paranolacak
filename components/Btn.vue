@@ -5,10 +5,12 @@
       { secondry: variant == 'secondry' },
       { fill: variant == 'fill' },
       { secondryAlt: variant == 'secondryAlt' },
+      { noir: variant == 'noir' },
       { white: textColor == 'white' },
+      { full: width == 'full' },
     ]">
     <NuxtLink :to="`${destination ? '/' + destination : ''}`" class="btn">
-      <button>
+      <button @click="$emit('clicked')">
         {{ text }}
         <slot />
       </button>
@@ -17,7 +19,8 @@
 </template>
 
 <script setup>
-defineProps(["variant", "textColor", "destination",'text']);
+defineProps(["variant", "textColor", "destination", "text", "width"]);
+defineEmits(["clicked"]);
 </script>
 
 <style lang="scss" scoped>
@@ -29,6 +32,11 @@ defineProps(["variant", "textColor", "destination",'text']);
     border-radius: 4px;
   }
 }
+.full {
+  button {
+    width: min(100%, 420px);
+  }
+}
 .white {
   button {
     color: $white;
@@ -38,6 +46,13 @@ defineProps(["variant", "textColor", "destination",'text']);
   button {
     background-color: $primary;
     border: 2px solid $primary;
+  }
+}
+.noir {
+  button {
+    background-color: black;
+    border: 2px solid black;
+    color: white;
   }
 }
 .primary {
