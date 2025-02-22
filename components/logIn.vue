@@ -13,10 +13,10 @@
         text-color="white"
         @click="modal.show = 'signup'"
       />
-      <!-- remove meeeee -->
+      <!-- remove meeeee
       <button @click="session.set({ user: 'Ali Elsayed', session: '123123123' })">
         quick login
-      </button>
+      </button> -->
     </TransitionGroup>
   </Auth>
 </template>

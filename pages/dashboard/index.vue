@@ -41,7 +41,7 @@
             <Btn
               variant="fill"
               class="deposit-button"
-              destination="dashboard/deposit"
+              destination="dashboard/deposit/iban"
               >Para Yatır</Btn
             >
             <Btn

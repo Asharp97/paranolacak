@@ -29,9 +29,9 @@
             >Hesap Oluştur</Btn
           >
           <!-- remove meeeeee -->
-          <Btn variant="secondry" @click="modal.show = 'kimlik-foto'"
+          <!-- <Btn variant="secondry" @click="modal.show = 'kimlik-foto'"
             >kimlik-foto</Btn
-          >
+          > -->
         </div>
       </nav>
       <nav class="mobile-nav showMob showTab">
@@ -99,9 +99,9 @@
           <Sign-up />
         </fscreen>
         <!-- remove meeeeeee  -->
-        <fscreen v-else-if="modal.show == 'kimlik-foto'">
+        <!-- <fscreen v-else-if="modal.show == 'kimlik-foto'">
           <kimlik-foto />
-        </fscreen>
+        </fscreen> -->
       </Transition>
     </Teleport>
   </div>

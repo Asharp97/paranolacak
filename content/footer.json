@@ -2,7 +2,7 @@
   {
     "title": "Şirket",
     "links": [
-      { "name": "Hakkımızda", "url": "/hakkimizda" },
+      { "name": "Hakkımızda", "url": "/hakkimizda.vue" },
       { "name": "Gereksinimler", "url": "/gereksinimler" },
       { "name": "Nasıl Hesap Açılır?", "url": "/nasil-hesap-acilir" }
     ]

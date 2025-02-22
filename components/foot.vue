@@ -7,11 +7,9 @@
             <div v-for="(x, n) in footer" :key="n" class="menus">
               <h6>{{ x.title }}</h6>
               <div v-for="(title, y) in x.links" :key="y" class="menu">
-                <p>
-                  <NuxtLink :to="title.url">
-                    <p class="gentle-slide">{{ title.name }}</p>
-                  </NuxtLink>
-                </p>
+                <NuxtLink :to="title.url">
+                  <p class="gentle-slide">{{ title.name }}</p>
+                </NuxtLink>
               </div>
             </div>
           </div>
