@@ -6,18 +6,16 @@
         :key="n"
         class="step"
         :class="{ active: n <= step }"
-        @click="$emit('activateStep', n)"
-      >
+        @click="$emit('activateStep', n)">
         <!-- @click="step = n" -->
         <h6 v-if="n != 4">{{ n }}</h6>
         <Icon
           v-else
           :name="
-            !session.user
+            !auth.user
               ? 'material-symbols:check-rounded'
               : 'fluent:hourglass-one-quarter-24-regular'
-          "
-        />
+          " />
       </li>
     </ul>
   </div>
@@ -26,7 +24,7 @@
 <script setup>
 defineProps(["step"]);
 defineEmits(["activateStep"]);
-const session = useSession();
+const auth = useSession();
 </script>
 
 <style lang="scss" scoped>

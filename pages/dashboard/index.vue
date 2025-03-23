@@ -4,7 +4,7 @@
       <template #side>
         <div class="account-summary">
           <header class="account-header">
-            <h1 class="account-name">{{ session.user }}</h1>
+            <h1 class="account-name">{{ auth.user }}</h1>
             <p class="iban">
               <strong>IBAN:</strong> TR83 9283 9281 9273 9271 4723 01
             </p>
@@ -114,7 +114,7 @@
 
 <script setup>
 definePageMeta({ layout: "dash-nav" });
-const session = useSession();
+const auth = useSession();
 const history = [
   {
     type: "withdraw",

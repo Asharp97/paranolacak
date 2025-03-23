@@ -11,10 +11,9 @@
         variant="primary"
         text="Ücretsiz Hesap Aç"
         text-color="white"
-        @click="modal.show = 'signup'"
-      />
+        @click="modal.show = 'signup'" />
       <!-- remove meeeee
-      <button @click="session.set({ user: 'Ali Elsayed', session: '123123123' })">
+      <button @click="auth.set({ user: 'Ali Elsayed', session: '123123123' })">
         quick login
       </button> -->
     </TransitionGroup>
@@ -22,7 +21,7 @@
 </template>
 <script setup>
 const modal = useModal();
-const session = useSession();
+const auth = useSession();
 </script>
 
 <style lang="scss" scoped></style>

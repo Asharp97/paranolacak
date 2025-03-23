@@ -17,7 +17,7 @@
           Cep telefonunuza gelen 6 haneli doğrulama kodunu aşağıdaki alana
           girin.
         </p>
-        <otp />
+        <otp @proceed="activeStep++" />
       </div>
       <div v-if="activeStep == 3">
         <h6 class="title">Bilgilerinizi Doldurun</h6>
@@ -39,14 +39,12 @@
         <div
           v-for="(n, x) in terms"
           :key="x"
-          class="input-wrapper checkbox-wrapper"
-        >
+          class="input-wrapper checkbox-wrapper">
           <input
-            id="term"
+            :id="`term${x}`"
             v-model="terms[x].value"
             type="checkbox"
-            name="term"
-          />
+            name="term" />
           <label :for="n.name">
             <span v-if="terms[x].value" class="icon-wrapper">
               <Icon name="material-symbols:check-small-rounded" class="icon" />
@@ -65,8 +63,7 @@
         v-if="activeStep <= 3"
         text="Devam Et"
         variant="fill"
-        @click="activeStep++"
-      />
+        @click="activeStep++" />
 
       <div v-if="activeStep < 3">
         <p class="footer-text">Bir<span> paran</span>olacak hesabım var.</p>
@@ -74,8 +71,7 @@
           text="Giriş Yap"
           variant="primary"
           text-color="white"
-          @click="modal.show = 'login'"
-        />
+          @click="modal.show = 'login'" />
       </div>
     </TransitionGroup>
   </Auth>

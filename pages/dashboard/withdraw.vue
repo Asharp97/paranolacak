@@ -21,7 +21,7 @@
 
         <div class="right-icon input-wrapper" :class="{ error: passError }">
           <input
-            :value="session.user"
+            :value="auth.user"
             placeholder="Alıcı Adı Soyadı"
             type="text"
             @blur="passCheck" />
@@ -65,7 +65,7 @@
 
 <script setup>
 import menu from "@/content/menus.json";
-const session = useSession();
+const auth = useSession();
 const registerAccount = ref(false);
 const accountName = ref("");
 </script>

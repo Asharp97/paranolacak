@@ -18,7 +18,7 @@
           </NuxtLink>
         </div>
         <user-comp />
-        <div v-if="!session.user" class="auth">
+        <div v-if="!auth.user" class="auth">
           <Btn
             variant="primary"
             text-color="white"
@@ -66,7 +66,7 @@
                   ><h4>{{ x.name }}</h4>
                 </NuxtLink>
                 <div class="hr" />
-                <div v-if="!session.user" class="auth">
+                <div v-if="!auth.user" class="auth">
                   <Btn variant="primary" @click="modal.show = 'login'"
                     >Giriş Yap</Btn
                   >
@@ -111,7 +111,7 @@
 defineProps(["transparent", "menu"]);
 const showNav = ref(false);
 const modal = useModal();
-const session = useSession();
+const auth = useSession();
 const route = useRoute();
 
 const isActive = (parentPath) => route.path.startsWith(parentPath);

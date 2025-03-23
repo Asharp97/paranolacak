@@ -53,7 +53,7 @@
 <script setup>
 import { onKeyStroke } from "@vueuse/core";
 const modal = useModal();
-const session = useSession();
+const auth = useSession();
 
 onKeyStroke("Escape", () => {
   modal.show = null;

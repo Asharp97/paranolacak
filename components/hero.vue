@@ -2,20 +2,22 @@
   <section class="hero-component section-bg" :class="{ grad: video }">
     <div class="section container" :class="{ inv: inv }">
       <div class="text" :class="{ white: video }">
-        <h1>{{ header }}</h1>
-        <p>{{ paragraph }}</p>
+        <h1 v-if="header">{{ header }}</h1>
+        <p v-if="paragraph">{{ paragraph }}</p>
         <slot />
       </div>
       <div v-if="img" class="img rotato" :style="`max-width: ${maxWidth}`">
         <nuxt-img class="img float" :src="`${img}`" />
       </div>
-      <video
-        v-if="video"
-        class="video-src hideTab"
-        autoplay
-        muted
-        playsinline
-        src="https://ik.imagekit.io/sharp/paranolacak/hero.mp4" />
+      <ClientOnly>
+        <video
+          v-if="video"
+          class="video-src hideTab"
+          autoplay
+          muted
+          playsinline
+          src="https://ik.imagekit.io/sharp/paranolacak/hero.mp4" />
+      </ClientOnly>
     </div>
   </section>
 </template>

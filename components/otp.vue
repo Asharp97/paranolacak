@@ -2,8 +2,7 @@
   <TransitionGroup
     name="list"
     tag="div"
-    class="input-wrapper verification-wrapper"
-  >
+    class="input-wrapper verification-wrapper">
     <input
       v-for="(n, x) in 6"
       :key="n"
@@ -12,9 +11,9 @@
       type="password"
       maxLength="1"
       :autofocus="n == 0"
+      @paste="paste()"
       @input="handleKeyDown($event, x)"
-      @keydown="del($event, x)"
-    />
+      @keydown="del($event, x)" />
 
     <button v-if="otp.some((item) => item != '')" @click="clear">
       <Icon name="material-symbols:cancel" class="icon" />
@@ -23,6 +22,7 @@
 </template>
 
 <script setup>
+const emit = defineEmits(["proceed"]);
 const itemRefs = useTemplateRef("items");
 onMounted(() => {
   itemRefs.value[0].focus();
@@ -43,6 +43,14 @@ const del = function (event, index) {
 const handleKeyDown = function (event, index) {
   if (event.inputType != "deleteContentBackward")
     if (index < 5) itemRefs.value[index + 1].focus();
+};
+
+const paste = () => {
+  navigator.clipboard.readText().then((text) => {
+    otp.value = text.split("");
+    itemRefs.value[1].blur();
+    emit('proceed');
+  });
 };
 </script>
 

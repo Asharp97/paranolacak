@@ -10,16 +10,18 @@
     <div v-for="(ucret, n) in ucretler" :key="n" class="tables container">
       <h2>{{ ucret.title }}</h2>
       <table>
-        <tr>
-          <th class="p">Hesap Türü</th>
-          <th class="p">İşlem Türü</th>
-          <th class="p">İşlem Ücreti</th>
-        </tr>
-        <tr v-for="(x, y) in ucret.table" :key="y">
-          <td class="p">{{ x.hesap }}</td>
-          <td class="p">{{ x.islem }}</td>
-          <td class="p">{{ x.ucret }}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th class="p">Hesap Türü</th>
+            <th class="p">İşlem Türü</th>
+            <th class="p">İşlem Ücreti</th>
+          </tr>
+          <tr v-for="(x, y) in ucret.table" :key="y">
+            <td class="p">{{ x.hesap }}</td>
+            <td class="p">{{ x.islem }}</td>
+            <td class="p">{{ x.ucret }}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>

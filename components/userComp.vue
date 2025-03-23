@@ -1,9 +1,9 @@
 <template>
-  <div v-if="session.user" class="user">
+  <div v-if="auth.user" class="user">
     <div class="trigger">
       <drop-down :options="userMenu">
         <p>
-          Hoş geldiniz <span> Sn {{ session.user }}</span>
+          Hoş geldiniz <span> Sn {{ auth.user }}</span>
         </p>
         <Icon name="material-symbols:keyboard-arrow-down" class="icon" />
       </drop-down>
@@ -12,19 +12,19 @@
       :variant="inv ? 'fill' : 'secondry'"
       :text-color="{ white: !inv }"
       text="Çıkış Yap"
-      @click="session.reset()" />
+      @click="auth.reset()" />
   </div>
 </template>
 
 <script setup>
 defineProps(["inv"]);
-const session = useSession();
+const auth = useSession();
 const userMenu = [
   { label: "Hesabım", to: { name: "dashboard" } },
   { label: "Ayarlar", to: { name: "index" } },
   { label: "Destek Merkezi", to: { name: "index" } },
   { label: "Limitlerim", to: { name: "ucretler-limitler" } },
-  { label: "Güvenli Çıkış", action: () => session.reset() },
+  { label: "Güvenli Çıkış", action: () => auth.reset() },
 ];
 </script>
 

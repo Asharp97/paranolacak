@@ -78,8 +78,8 @@ sana ait olması gerektiğini unutma. Başkasına ait banka/kredi kartları ile 
 
 <script setup>
 import menu from "@/content/menus.json";
-const session = useSession();
-const name = ref(session.user);
+const auth = useSession();
+const name = ref(auth.user);
 
 const date = ref("");
 const ccNumber = ref("");
@@ -92,7 +92,11 @@ const formateDate = () => {
 };
 
 const formateCard = () => {
-  ccNumber.value=ccNumber.value.replace(/\s+/g, '').match(/.{1,4}/g)?.join('  ') || '';
+  ccNumber.value =
+    ccNumber.value
+      .replace(/\s+/g, "")
+      .match(/.{1,4}/g)
+      ?.join("  ") || "";
 };
 </script>
 
