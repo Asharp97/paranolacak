@@ -1,6 +1,3 @@
-Here’s a **README.md** draft for your project **Paran Olacak**:
-
-````markdown
 # 💳 Paran Olacak – Frontend
 
 Paran Olacak is the frontend of a modern banking system website.  
