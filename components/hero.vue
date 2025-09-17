@@ -52,7 +52,7 @@ defineProps(["inv", "header", "paragraph", "img", "maxWidth", "video"]);
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: bottom;
+      object-position: center;
       position: absolute;
       top: 0;
       right: 0;
